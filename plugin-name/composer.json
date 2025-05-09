@@ -1,0 +1,46 @@
+{
+	"name": "vendor-name/plugin-name",
+	"version": "1.0.0",
+	"description": "Some descriptions",
+	"authors": [
+		{
+			"name": "Some Author",
+			"email": "some@email.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"VendorName\\PluginName\\": "src/"
+		}
+	},
+	"require-dev": {
+		"wp-cli/dist-archive-command": "@stable",
+		"wp-cli/i18n-command": "^2.6",
+		"wp-coding-standards/wpcs": "^3.0"
+	},
+	"scripts": {
+		"i18n-makejson": [
+			"wp i18n make-json i18n"
+		],
+		"i18n-makemo": [
+			"wp i18n make-mo i18n"
+		],
+		"i18n-makepot": [
+			"wp i18n make-pot . i18n/languages/plugin-name.pot --exclude=\".github,.wordpress-org,node_modules,vendor,build,deploy\""
+		],
+		"phpcs-check": [
+			"phpcs --extensions=php,html --report-full=phpcs-report.txt --report-source ."
+		],
+		"phpcs-fix": [
+			"phpcbf --extensions=php,html ."
+		],
+		"zip": [
+			"wp dist-archive ./"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@mixin background-blue {
+	background-color: blue;
+}
+
+body {
+	@include background-blue;
+}
