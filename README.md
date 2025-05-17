@@ -156,10 +156,13 @@ Feel free to amend/remove these scripts as required, e.g. your project might not
 
 To download a production ready zip, run the `pnpm run zip` script, this will result in only production files being included, to exclude specific folders/files, add them to `.distignore`.
 
-# What you should check before deploying
+# Recommendations
 
-- Check version numbers correct
-- Checked version declarations correct (e.g. tested up to)
+Consider the following recommendations when using this boilerplate for your plugin:
+
+- Use a PHP Scoper like wpify/scoper if using non-dev composer dependencies.
+- Use GitHub actions to perform checks on code using phpcs:check and prettier:check
+- Use Lefthook to check code before it is committed
 
 # Contribute
 
