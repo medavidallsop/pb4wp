@@ -158,7 +158,7 @@ To download a production ready zip, run the `pnpm run zip` script, this will res
 
 # Recommendations
 
-Consider the following recommendations when using this boilerplate for your plugin:
+Consider the following recommendations for your plugin:
 
 - Use a PHP Scoper like wpify/scoper if using non-dev composer dependencies.
 - Use GitHub actions to perform checks on code using phpcs:check and prettier:check
