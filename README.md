@@ -70,33 +70,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 This will install composer and PNPM dependencies.
 
-# Structure
-
-After the installation steps, you'll see the following structure. Some of these folders/files are only generated upon certain development scripts being run.
-
-| Folder/File          | Description                                                                 | In Zip                          |
-|----------------------|-----------------------------------------------------------------------------|---------------------------------|
-| `assets`             | Generated during build containing output from `client`.                     | ✅                              |
-| `build`              | Generated when a zip of the plugin is created.                              | ❌                              |
-| `client`             | Handles user-facing side of the plugin, such as JS/CSS. Built to `assets`.  | ❌                              |
-| `i18n`               | Contains translations.                                                      | ✅                              |
-| `node_modules`       | Stores PNPM packages.                                                       | ❌                              |
-| `src`                | Contains PHP classes, functions, etc.                                       | ✅                              |
-| `vendor`             | Autoloader for dependencies.                                                | ✅ (only non-dev dependencies)  |
-| `.distignore`        | Used by the zip process to determine which files should be excluded.        | ❌                              |
-| `.prettierignore`    | Specifies files that Prettier will ignore.                                  | ❌                              |
-| `.prettierrc.js`     | Configuration file for Prettier.                                            | ❌                              |
-| `composer.json`      | Configuration file for Composer.                                            | ❌                              |
-| `composer.lock`      | Configuration file for Composer.                                            | ❌                              |
-| `LICENSE.txt`        | License information.                                                        | ✅                              |
-| `package.json`       | Configuration file for NPM.                                                 | ❌                              |
-| `phpcs-report.txt`   | Generated during phpcs scripts.                                             | ❌                              |
-| `phpcs.xml`          | phpcs rule configuration.                                                   | ❌                              |
-| `plugin-name.php`    | Root plugin file.                                                           | ✅                              |
-| `pnpm-lock-yaml`     | PNPM configuration file.                                                    | ❌                              |
-| `README.md`          | Plugin readme.                                                              | ✅                              |
-| `uninstall.php`      | Uninstall functionality.                                                    | ✅                              |
-| `webpack.config.js`  | Configuration file for Webpack.                                             | ❌                              |
+After the installation steps, you'll see various files, some of these are dev files that won't end up in the final built zip. Some folders/files are only generated upon certain development scripts being run.
 
 # Assets
 
