@@ -9,7 +9,7 @@
 
 # Plugin Boilerplate for WordPress (PB4WP)
 
-A boilerplate you can use as a foundation for building object-orientated WordPress plugins, includes PHP code examples for activation, deactivation, install, update, and uninstall, and scripts for development tasks.
+A boilerplate you can use as a foundation for building object-orientated WordPress plugins.
 
 # Prerequisites
 
@@ -35,7 +35,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ Scripts for development tasks
 - ✅ Produces a production ready zip
 
-*\*Checks and/or fixes issues with PHP, JS, CSS, etc, With the exception of PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*
+*\*Checks and/or fixes issues with PHP, JS, CSS, etc, excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*
 
 # Installation
 
@@ -74,14 +74,14 @@ After the installation steps, you'll see various files, some of these are dev fi
 
 # Assets
 
-The `client` folder has 2 example folders:
+The `client` folder has 2 asset handling examples:
 
-| Folder                           | Description                                                                                                                                       |
-|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| `client/bundle`                  | Example of JS which bundles a PNPM library as both css/js, when the assets are built a combined JS file is included in `assets` to be enqueued.   |
-| `client/static`                  | Example of static CSS/SCSS/JS, when the assets are built these are compiled and minified in `assets` to be enqueued.                              |
+| Folder                           | Description                                                                                                                                           |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `client/bundle`                  | Example of JS which bundles a PNPM dependency as both CSS/JS, when the assets are built, a combined JS file is included in `assets` to be enqueued.   |
+| `client/static`                  | Example of static CSS/SCSS/JS, when the assets are built these are compiled and minified in `assets` to be enqueued.                                  |
 
-You should replace these with your assets as per your requirements, or remove entirely if no assets needed. (regardless of which, ensure you amend the scripts in `package.json` accordingly).
+You should replace these with your assets as per your requirements, or remove if no assets needed. (ensure you amend the scripts in `package.json` accordingly).
 
 Note when enqueuing your assets, it is recommended to enqueue the compiled version in `/assets`, not `/client`, as the assets folder contains the compiled/minified assets, whereas client are the source files.
 
@@ -89,7 +89,7 @@ If your project relies on a JS library, rather than enqueing the JS library, it 
 
 # PHP
 
-I have included some PHP code examples. Amend or remove these as needed for your plugin.
+Lifecycle code examples are included. Amend or remove these as needed for your plugin.
 
 | File                           | Description                                                    |
 |--------------------------------|----------------------------------------------------------------|
@@ -134,10 +134,10 @@ To download a production ready zip, run the `pnpm run zip` script, this will res
 
 Consider the following recommendations for your plugin:
 
-- Use a PHP Scoper like wpify/scoper if using non-dev composer dependencies.
-- Use GitHub actions to perform checks on code using phpcs:check and prettier:check
-- Use Lefthook to check code before it is committed
+- Use a PHP Scoper like [WPify Scoper](https://github.com/wpify/scoper) if using non-dev composer dependencies.
+- Use [GitHub actions](https://github.com/features/actions) to perform checks on code using phpcs:check and prettier:check
+- Use [Lefthook](https://lefthook.dev) to check code before it is committed
 
 # Contribute
 
-If you wish to contribute to this project, feel free to submit a PR.
+If you wish to contribute to this project, feel free to submit a PR. Thank you!
