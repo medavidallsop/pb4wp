@@ -95,7 +95,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		}
 
 		/**
-		 * Initialize hooks for activation, deactivation, installation and updates.
+		 * Initialize hooks for activation, deactivation, installation, updates, and textdomain loading.
 		 *
 		 * @return void
 		 * @since 1.0.0
@@ -104,6 +104,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 			register_activation_hook( __FILE__, array( Activator::class, 'activate' ) );
 			register_deactivation_hook( __FILE__, array( Deactivator::class, 'deactivate' ) );
 			add_action( 'plugins_loaded', array( $this, 'install_or_update' ) );
+			add_action( 'init', array( $this, 'load_textdomain' ) );
 		}
 
 		/**
@@ -121,6 +122,20 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 			} elseif ( get_option( 'plugin_name_version' ) !== $this->version ) {
 				Updater::update();
 			}
+		}
+
+		/**
+		 * Load plugin textdomain for translations.
+		 *
+		 * @return void
+		 * @since 1.0.0
+		 */
+		public function load_textdomain(): void {
+			load_plugin_textdomain(
+				'plugin-name',
+				false,
+				dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/'
+			);
 		}
 
 		/**
