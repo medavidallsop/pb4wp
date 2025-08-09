@@ -1,5 +1,1 @@
-var test = 'test';
-
-if (test == 'test') {
-	console.log('Example');
-}
+console.log('Example');

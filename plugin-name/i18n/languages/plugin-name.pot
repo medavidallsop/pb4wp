@@ -1,5 +1,5 @@
-# Copyright (C) 2025 Author Name
-# This file is distributed under the GPL v2 or later.
+# Copyright (C) 2025 Vendor Name
+# This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugin Name 1.0.0\n"
@@ -9,49 +9,32 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-01T17:08:00+00:00\n"
+"POT-Creation-Date: 2025-08-09T11:18:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: plugin-name\n"
 
 #. Plugin Name of the plugin
 #: plugin-name.php
-#: src/Admin/Register_Menu.php:30
-#: src/Admin/Register_Menu.php:31
 msgid "Plugin Name"
 msgstr ""
 
 #. Plugin URI of the plugin
+#. Author URI of the plugin
 #: plugin-name.php
-msgid "https://pluginurl.com"
+msgid "https://example.com"
 msgstr ""
 
 #. Description of the plugin
 #: plugin-name.php
-msgid "Lorem ipsum dolor sit amet."
+msgid "Lore ipsum dolor sit amet."
 msgstr ""
 
 #. Author of the plugin
 #: plugin-name.php
-msgid "Author Name"
+msgid "Vendor Name"
 msgstr ""
 
-#. Author URI of the plugin
-#: plugin-name.php
-msgid "https://authorurl.com"
-msgstr ""
-
-#: src/Admin/Settings_Links.php:45
-msgctxt "Options link"
-msgid "Settings"
-msgstr ""
-
-#: src/Admin/Settings_Links.php:47
-msgctxt "Plugin documentation"
-msgid "Docs"
-msgstr ""
-
-#: src/Admin/Settings_Links.php:48
-msgctxt "Plugin site"
-msgid "DLXPlugins"
+#: src/Example_Class.php:32
+msgid "Example"
 msgstr ""

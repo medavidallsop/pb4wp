@@ -128,7 +128,7 @@ Feel free to amend/remove these scripts as required, e.g. your project might not
 
 # Zip
 
-To download a production ready zip, run the `pnpm run zip` script, to exclude specific folders/files, add them to `.distignore`. The zip will be saved to `/build`
+To download a production ready zip, run the `pnpm run zip` script, to exclude specific folders/files, add them to `.distignore`. The zip will be saved to `/build`. This runs the `build` script before zipping.
 
 # Recommendations
 
