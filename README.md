@@ -121,14 +121,14 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `prettier:check`            | Checks code formatting using Prettier.                                      | `pnpm run prettier:check`           |
 | `prettier:fix`              | Fixes code formatting issues using Prettier.                                | `pnpm run prettier:fix`             |
 | `test`                      | Runs tests for the plugin.                                                  | `pnpm run test`                     |
-| `watch`                     | Watches for changes in assets and rebuilds them automatically.              | `pnpm run watch`                    |
+| `watch`                     | Watches for CSS/SCSS/JS changes in /client and rebuilds in /assets.         | `pnpm run watch`                    |
 | `zip`                       | Creates a zip file of the plugin for distribution.                          | `pnpm run zip`                      |
 
 Feel free to amend/remove these scripts as required, e.g. your project might not have any static assets.
 
 # Zip
 
-To download a production ready zip, run the `pnpm run zip` script, this will result in only production files being included, to exclude specific folders/files, add them to `.distignore`.
+To download a production ready zip, run the `pnpm run zip` script, to exclude specific folders/files, add them to `.distignore`. The zip will be saved to `/build`
 
 # Recommendations
 

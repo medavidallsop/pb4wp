@@ -35,7 +35,9 @@
 			"phpcbf --extensions=php,html ."
 		],
 		"zip": [
-			"wp dist-archive ./"
+			"rm -rf build",
+			"mkdir -p build",
+			"wp dist-archive ./ ./build/"
 		]
 	},
 	"config": {

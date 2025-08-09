@@ -1,4 +1,4 @@
-# A set of files you probably don't want in your WordPress.org distribution
+# A set of files you probably don't want in your WordPress.org distribution - clean this up
 .deploy
 .distignore
 .DS_Store
@@ -30,3 +30,7 @@ webpack.config.js
 phpcs-report.txt
 phpcs.xml
 pnpm-lock.yaml
+
+.prettierignore
+.prettierrc.js
+build/
