@@ -15,7 +15,6 @@
 		"phpcs:fix": "composer run-script phpcs-fix",
 		"prettier:check": "pnpm prettier --check .",
 		"prettier:fix": "pnpm prettier --write .",
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"watch": "nodemon --watch client --ext css,scss,js --ignore '*.min.js' --ignore '*.min.css' --exec \"pnpm run build:assets:bundle && pnpm run build:assets:static\";",
 		"zip": "pnpm run build && composer install --no-dev && composer run-script zip && composer install"
 	},

@@ -120,7 +120,6 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `phpcs:fix`                 | Runs PHP CodeSniffer to automatically fix coding standard violations.       | `pnpm run phpcs:fix`                |
 | `prettier:check`            | Checks code formatting using Prettier.                                      | `pnpm run prettier:check`           |
 | `prettier:fix`              | Fixes code formatting issues using Prettier.                                | `pnpm run prettier:fix`             |
-| `test`                      | Runs tests for the plugin.                                                  | `pnpm run test`                     |
 | `watch`                     | Watches for CSS/SCSS/JS changes in /client and rebuilds in /assets.         | `pnpm run watch`                    |
 | `zip`                       | Creates a zip file of the plugin for distribution.                          | `pnpm run zip`                      |
 
