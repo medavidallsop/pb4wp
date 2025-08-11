@@ -1,3 +1,4 @@
+# Files/folders to exclude when generating the zip
 .*
 .*/
 build/

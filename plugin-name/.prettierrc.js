@@ -1,4 +1,4 @@
-// This file is used to configure Prettier to use WordPress's Prettier configuration
+// Configures Prettier to use the WordPress Prettier configuration
 const wordpressConfig = require('@wordpress/prettier-config');
 
 module.exports = {
