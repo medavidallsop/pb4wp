@@ -1,13 +1,5 @@
 {
 	"name": "vendor-name/plugin-name",
-	"version": "1.0.0",
-	"description": "Some descriptions",
-	"authors": [
-		{
-			"name": "Some Author",
-			"email": "some@email.com"
-		}
-	],
 	"autoload": {
 		"psr-4": {
 			"VendorName\\PluginName\\": "src/"

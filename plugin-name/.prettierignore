@@ -1,3 +1,3 @@
-# Prettier by default ignores .git, node_modules, etc (https://prettier.io/docs/ignore#ignoring-files-prettierignore)
+# See default ignore list: https://prettier.io/docs/ignore#ignoring-files-prettierignore
 assets/**/*.min.*
 **/vendor
