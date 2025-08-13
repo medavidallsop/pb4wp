@@ -5,5 +5,6 @@ Update webpack.config.js + package.json build/watch scripts if you change the ex
 
 //import example from 'example'; // Import from a package
 //import 'example/dist/css/example.css'; // Import CSS from a package
-import './example-bundle-css.css'; // Import CSS from a static file
+import './example-bundle-css.css'; // Import CSS from a non-package CSS file
+import './example-bundle-scss.scss'; // Import SCSS from a non-package SCSS file
 console.log('Example');

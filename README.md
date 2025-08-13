@@ -9,37 +9,57 @@
 
 # Plugin Boilerplate for WordPress (PB4WP)
 
-A boilerplate you can use as a foundation for building WordPress plugins.
+A boilerplate you can use as a foundation for building WordPress plugins by [David Allsop](https://davidallsop.com).
 
-# Prerequisites
+# Requirements
 
-**TL;DR: Use a POSIX OS and ensure `php`, `composer`, `pnpm`, and `wp` terminal commands are available globally.**
+>TL;DR: Use a POSIX OS and ensure `php`, `composer`, `pnpm`, and `wp` terminal commands are available globally.
 
 A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're working on a Windows machine, the recommended approach is to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (available since Windows 10).
 
-- [PHP](https://www.php.net/manual/en/install.php)\*
 - [Composer](https://getcomposer.org/doc/00-intro.md)
 - [Node.js](https://nodejs.org/en)*
+- [PHP](https://www.php.net/manual/en/install.php)\*
 - [PNPM](https://pnpm.io/installation)*
 - [WP-CLI](https://wp-cli.org/#installing) (as some included scripts use the `wp` command)
 
-*\* Some scripts included may require a recent PHP version.*
+<small>*\* Some scripts included may require a recent PHP version.*</small>
 
 # Features
 
-- ✅ PSR4 autoloading
-- ✅ Compliant with WordPress coding standards*
-- ✅ Asset compilation and minification for bundles and static assets
-- ✅ Translation ready and generates .pot, .mo, .json
-- ✅ PHP code examples
-- ✅ Scripts for development tasks
-- ✅ Builds a production ready zip
+## 🚀 **Modern Development Stack**
+- ✅ **PSR-4 Autoloading** - Clean, standards-compliant class loading with Composer
+- ✅ **Modern PHP+** - Strict typing, namespaces, and modern PHP features
+- ✅ **Webpack Asset Pipeline** - Advanced bundling, minification, and optimization
+- ✅ **PNPM Package Manager** - Fast, efficient dependency management
 
-*\*Checks and/or fixes issues with PHP, JS, CSS, etc, excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*
+## 🛠️ **Development Experience**
+- ✅ **WordPress Coding Standards** - PHPCS integration with WPCS rules*
+- ✅ **Prettier Code Formatting** - Consistent code style across PHP, JS, and CSS
+- ✅ **Hot Reload Development** - Watch mode for instant asset rebuilding
+- ✅ **Comprehensive Build Scripts** - One-command builds for development and production
+
+## 🌐 **Internationalization**
+- ✅ **Complete i18n Setup** - Automatic .pot, .mo, and .json generation
+- ✅ **Translation-Ready** - Built-in text domain and language file structure
+
+## 📦 **Production Ready**
+- ✅ **Easy Zipping** - Production-ready distribution with proper file exclusion
+- ✅ **Asset Optimization** - Minified CSS/JS bundles for optimal performance
+- ✅ **Lifecycle Management** - Complete activation, deactivation, and update handling
+- ✅ **Clean Uninstall** - Proper cleanup when plugin is removed
+
+## 🔧 **Developer Tools**
+- ✅ **Code Quality Checks** - PHPCS and Prettier validation
+- ✅ **Example Code Structure** - Real-world class examples and patterns
+- ✅ **Flexible Asset System** - Support for both bundled and static assets
+- ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
+
+<small>*\*Checks and/or fixes issues with PHP, JS, CSS, etc, excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*</small>
 
 # Installation
 
-**TL;DR: Rename the folder, and the files and their contents to your plugin/vendor name, then run `composer install` then `pnpm install` from the folder.**
+>TL;DR: Rename the folder, and the files and their contents to your plugin/vendor name, then run `composer install` then `pnpm install` from the folder.
 
 1. Rename the `plugin-name` folder, and the inner `plugin-name.php` file in the folder.
 
@@ -55,7 +75,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 | `VendorName`        | `ExampleVendor` |
 | `Vendor Name`       | `Example Vendor`|
 
-*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*
+<small>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*</small>
 
 3. Modify your renamed `plugin-name.php` to your requirements, e.g. plugin URI, description, etc.
 
@@ -76,12 +96,12 @@ After the installation steps, you'll see various files, some of these are dev fi
 
 The `client` folder has 2 asset handling examples:
 
-| Folder                           | Description    |
-|----------------------------------|----------------|
-| `client/bundle`                  | Bundled assets |
-| `client/static`                  | Static assets. |
+| Folder                           | Description                                                                  |
+|----------------------------------|------------------------------------------------------------------------------|
+| `client/bundle`                  | Bundled assets. See the comments in `example-bundle.js` for import examples. |
+| `client/static`                  | Static assets. Includes examples of CSS/SCSS/JS files.                       |
 
-See the files (and comments for the bundle based files), and build them to see the resulting files. When the assets are built these are compiled and minified in `assets` to be enqueued.
+Build them using `build:assets` to see the resulting files. The compiled and minified files will be added to `assets` to be enqueued.
 
 You should replace these with your assets as per your requirements, or remove if no assets needed. (ensure you amend the scripts in `package.json` accordingly).
 
@@ -91,16 +111,16 @@ If your project relies on a JS library, rather than enqueing the JS library, it 
 
 # PHP
 
-Lifecycle code examples are included. Amend or remove these as needed for your plugin.
+General and lifecycle-based code examples are included. Amend or remove these as needed for your plugin.
 
-| File                           | Description                                                    |
-|--------------------------------|----------------------------------------------------------------|
-| `src/Example_Class.php`        | Example of a class.                                            |
-| `src/Lifecycle/Activator.php`  | Can be used for activation, e.g. setting a transient.          |
-| `src/Lifecycle/Dectivator.php` | Can be used for deactivation, e.g. clearing scheduled hooks.   |
-| `src/Lifecycle/Installer.php`  | Can be used for installation, e.g. creating database tables.   |
-| `src/Lifecycle/Updater.php`    | Can be used for updating, e.g. add a new option.               |
-| `uninstall.php`                | For uninstall scripts, e.g. delete database tables.            |
+| File                            | Description                                                    |
+|---------------------------------|----------------------------------------------------------------|
+| `src/Example_Class.php`         | Example of a class.                                            |
+| `src/Lifecycle/Activator.php`   | Can be used for activation, e.g. setting a transient.          |
+| `src/Lifecycle/Deactivator.php` | Can be used for deactivation, e.g. clearing scheduled hooks.   |
+| `src/Lifecycle/Installer.php`   | Can be used for installation, e.g. creating database tables.   |
+| `src/Lifecycle/Updater.php`     | Can be used for updating, e.g. add a new option.               |
+| `uninstall.php`                 | For uninstall scripts, e.g. delete database tables.            |
 
 The classes are autoloaded by Composer, and get instantiated from `plugin-name.php`.
 
@@ -133,11 +153,12 @@ To download a production ready zip, run the `pnpm run zip` script, to exclude sp
 
 # Recommendations
 
-Consider the following recommendations for your plugin:
+Consider the following recommendations when developing your plugin:
 
-- Use a PHP Scoper like [WPify Scoper](https://github.com/wpify/scoper) if using non-dev composer dependencies.
-- Use [GitHub actions](https://github.com/features/actions) to perform checks on code using phpcs:check and prettier:check
-- Use [Lefthook](https://lefthook.dev) to check code before it is committed
+- [GitHub actions](https://github.com/features/actions) to perform checks on code.
+- [Lefthook](https://lefthook.dev) to check code before it is committed.
+- [PHPUnit](https://phpunit.de) to add unit tests.
+- [WPify Scoper](https://github.com/wpify/scoper) if using non-dev composer dependencies.
 
 # Contribute
 

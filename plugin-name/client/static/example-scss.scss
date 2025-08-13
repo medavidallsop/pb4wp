@@ -1,7 +1,7 @@
-@mixin background-blue {
+@mixin example-scss {
 	background-color: blue;
 }
 
-body {
-	@include background-blue;
+.example-scss {
+	@include example-scss;
 }

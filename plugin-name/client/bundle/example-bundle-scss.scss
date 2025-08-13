@@ -1,0 +1,7 @@
+@mixin example-bundle-scss {
+	background-color: blue;
+}
+
+.example-bundle-scss {
+	@include example-bundle-scss;
+}
