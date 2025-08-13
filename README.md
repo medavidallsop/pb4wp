@@ -9,7 +9,7 @@
 
 # Plugin Boilerplate for WordPress (PB4WP)
 
-A boilerplate you can use as a foundation for building object-orientated WordPress plugins.
+A boilerplate you can use as a foundation for building WordPress plugins.
 
 # Prerequisites
 
@@ -33,7 +33,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ Translation ready and generates .pot, .mo, .json
 - ✅ PHP code examples
 - ✅ Scripts for development tasks
-- ✅ Produces a production ready zip
+- ✅ Builds a production ready zip
 
 *\*Checks and/or fixes issues with PHP, JS, CSS, etc, excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*
 
@@ -68,7 +68,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - `composer install`
 - `pnpm install`
 
-This will install composer and PNPM dependencies.
+This will install the dependencies.
 
 After the installation steps, you'll see various files, some of these are dev files that won't end up in the final built zip. Some folders/files are only generated upon certain development scripts being run.
 
@@ -76,10 +76,12 @@ After the installation steps, you'll see various files, some of these are dev fi
 
 The `client` folder has 2 asset handling examples:
 
-| Folder                           | Description                                                                                                                                           |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `client/bundle`                  | Example of JS which bundles a PNPM dependency as both CSS/JS, when the assets are built, a combined JS file is included in `assets` to be enqueued.   |
-| `client/static`                  | Example of static CSS/SCSS/JS, when the assets are built these are compiled and minified in `assets` to be enqueued.                                  |
+| Folder                           | Description    |
+|----------------------------------|----------------|
+| `client/bundle`                  | Bundled assets |
+| `client/static`                  | Static assets. |
+
+See the files (and comments for the bundle based files), and build them to see the resulting files. When the assets are built these are compiled and minified in `assets` to be enqueued.
 
 You should replace these with your assets as per your requirements, or remove if no assets needed. (ensure you amend the scripts in `package.json` accordingly).
 
@@ -127,7 +129,7 @@ Feel free to amend/remove these scripts as required, e.g. your project might not
 
 # Zip
 
-To download a production ready zip, run the `pnpm run zip` script, to exclude specific files/folders, add them to `.distignore`. The zip will be saved to `/build`. This runs the `build` script before zipping.
+To download a production ready zip, run the `pnpm run zip` script, to exclude specific files/folders, add them to `.distignore`. The zip will be created in `/build`. This runs the `build` script before zipping.
 
 # Recommendations
 

@@ -24,7 +24,7 @@ class Updater {
 	 * @since 1.0.0
 	 */
 	public static function update(): void {
-		// Do any update tasks using version_compare of the plugin_name_version then update the version number so in future the updater knows the current version to compare to.
+		// Do any update tasks using version_compare, then update the version number so in future the updater knows the current version to compare to.
 		update_option( 'plugin_name_version', PLUGIN_NAME_PLUGIN_VERSION );
 	}
 }

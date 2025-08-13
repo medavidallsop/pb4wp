@@ -8,6 +8,6 @@
  * @since 1.0.0
  */
 
-defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
+defined( 'WP_UNINSTALL_PLUGIN' ) or exit;
 
 // Do any uninstall tasks here.
