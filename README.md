@@ -55,15 +55,15 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Flexible Asset System** - Support for both bundled and static assets
 - ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
 
-<small>*\*Checks and/or fixes issues with PHP, JS, CSS, etc, excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be removed from `phpcs.xml` if needed.*</small>
+<small>*\*Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be omitted from `phpcs.xml` if needed.*</small>
 
 # Installation
 
 >TL;DR: Rename the folder, and the files and their contents to your plugin/vendor name, then run `composer install` then `pnpm install` from the folder.
 
-1. Rename the `plugin-name` folder, and the inner `plugin-name.php` file in the folder.
+1. Rename the `plugin-name` folder and the inner `plugin-name.php` file in the folder.
 
-2. Find and replace the following **CASE SENSITIVE** terms, e.g. if the plugin is `Example Name` by `Example Vendor` then:
+2. Find and replace the following **CASE SENSITIVE** terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 
 | Original Term       | Replace With    |
 |---------------------|-----------------|
@@ -75,11 +75,11 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 | `VendorName`        | `ExampleVendor` |
 | `Vendor Name`       | `Example Vendor`|
 
-<small>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*</small>
+>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*
 
-3. Modify your renamed `plugin-name.php` to your requirements, e.g. plugin URI, description, etc.
+3. Modify your renamed `plugin-name.php` to your requirements, e.g., plugin URI, description, etc.
 
-4. Modify `readme.txt` to your requirements, e.g. contributors, tags, etc. I recommend comparing your readme.txt to the [WordPress.org example](https://wordpress.org/plugins/readme.txt). You can also [validate your readme.txt](https://wordpress.org/plugins/developers/readme-validator/).
+4. Modify `readme.txt` to your requirements, e.g., contributors, tags, etc. I recommend comparing your readme.txt to the [WordPress.org example](https://wordpress.org/plugins/readme.txt). You can also [validate your readme.txt](https://wordpress.org/plugins/developers/readme-validator/).
 
 5. Add the folder to your WordPress `/wp-content/plugins` folder, or symlink it from another location.
 
@@ -90,7 +90,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 This will install the dependencies.
 
-After the installation steps, you'll see various files, some of these are dev files that won't end up in the final built zip. Some folders/files are only generated upon certain development scripts being run.
+After the installation steps, you'll see various files; some of these are dev files that won't end up in the final built zip. Some folders/files are only generated upon certain development scripts being run.
 
 # Assets
 
@@ -103,11 +103,11 @@ The `client` folder has 2 asset handling examples:
 
 Build them using `build:assets` to see the resulting files. The compiled and minified files will be added to `assets` to be enqueued.
 
-You should replace these with your assets as per your requirements, or remove if no assets needed. (ensure you amend the scripts in `package.json` accordingly).
+You should replace these with your assets as per your requirements or remove them if no assets needed. (Ensure you amend the scripts in `package.json` accordingly).
 
 Note when enqueuing your assets, it is recommended to enqueue the compiled version in `/assets`, not `/client`, as the assets folder contains the compiled/minified assets, whereas client are the source files.
 
-If your project relies on a JS library, rather than enqueing the JS library, it is recommended to bundle this with the script files which rely on it.
+If your project relies on a JS library, rather than enqueueing the JS library, it is recommended to bundle this with the script files which rely on it.
 
 # PHP
 
@@ -116,13 +116,13 @@ General and lifecycle-based code examples are included. Amend or remove these as
 | File                            | Description                                                    |
 |---------------------------------|----------------------------------------------------------------|
 | `src/Example_Class.php`         | Example of a class.                                            |
-| `src/Lifecycle/Activator.php`   | Can be used for activation, e.g. setting a transient.          |
-| `src/Lifecycle/Deactivator.php` | Can be used for deactivation, e.g. clearing scheduled hooks.   |
-| `src/Lifecycle/Installer.php`   | Can be used for installation, e.g. creating database tables.   |
-| `src/Lifecycle/Updater.php`     | Can be used for updating, e.g. add a new option.               |
-| `uninstall.php`                 | For uninstall scripts, e.g. delete database tables.            |
+| `src/Lifecycle/Activator.php`   | Can be used for activation, e.g., setting a transient.          |
+| `src/Lifecycle/Deactivator.php` | Can be used for deactivation, e.g., clearing scheduled hooks.   |
+| `src/Lifecycle/Installer.php`   | Can be used for installation, e.g., creating database tables.   |
+| `src/Lifecycle/Updater.php`     | Can be used for updating, e.g., add a new option.               |
+| `uninstall.php`                 | For uninstall scripts, e.g., delete database tables.            |
 
-The classes are autoloaded by Composer, and get instantiated from `plugin-name.php`.
+The classes are autoloaded by Composer and get instantiated from `plugin-name.php`.
 
 # Scripts
 
@@ -145,11 +145,13 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `watch`                     | Watches for CSS/SCSS/JS changes in /client and rebuilds in /assets.         | `pnpm run watch`                    |
 | `zip`                       | Creates a zip file of the plugin for distribution.                          | `pnpm run zip`                      |
 
-Feel free to amend/remove these scripts as required, e.g. your project might not have any static assets.
+Feel free to amend/remove these scripts as required, e.g., your project might not have any static assets.
 
 # Zip
 
-To download a production ready zip, run the `pnpm run zip` script, to exclude specific files/folders, add them to `.distignore`. The zip will be created in `/build`. This runs the `build` script before zipping.
+To download a production-ready zip, run the `pnpm run zip` script; to exclude specific files/folders, add them to `.distignore`.
+
+The zip will be created in `/build`. This runs the `build` script before zipping.
 
 # Recommendations
 
