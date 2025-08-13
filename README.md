@@ -96,10 +96,10 @@ After the installation steps, you'll see various files; some of these are dev fi
 
 The `client` folder has 2 asset handling examples:
 
-| Folder                           | Description                                                                  |
-|----------------------------------|------------------------------------------------------------------------------|
-| `client/bundle`                  | Bundled assets. See the comments in `example-bundle.js` for import examples. |
-| `client/static`                  | Static assets. Includes examples of CSS/SCSS/JS files.                       |
+| Folder                           | Description                                                                   |
+|----------------------------------|-------------------------------------------------------------------------------|
+| `client/bundle`                  | Bundled assets. See the comments in `example-bundle.js` for import examples.  |
+| `client/static`                  | Static assets. Includes examples of CSS/SCSS/JS files.                        |
 
 Build them using `build:assets` to see the resulting files. The compiled and minified files will be added to `assets` to be enqueued.
 
@@ -113,9 +113,9 @@ If your project relies on a JS library, rather than enqueueing the JS library, i
 
 General and lifecycle-based code examples are included. Amend or remove these as needed for your plugin.
 
-| File                            | Description                                                    |
-|---------------------------------|----------------------------------------------------------------|
-| `src/Example_Class.php`         | Example of a class.                                            |
+| File                            | Description                                                     |
+|---------------------------------|-----------------------------------------------------------------|
+| `src/Example_Class.php`         | Example of a class.                                             |
 | `src/Lifecycle/Activator.php`   | Can be used for activation, e.g., setting a transient.          |
 | `src/Lifecycle/Deactivator.php` | Can be used for deactivation, e.g., clearing scheduled hooks.   |
 | `src/Lifecycle/Installer.php`   | Can be used for installation, e.g., creating database tables.   |
