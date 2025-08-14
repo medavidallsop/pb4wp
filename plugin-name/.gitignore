@@ -1,6 +1,6 @@
 .DS_Store
-assets
-build
-node_modules
-vendor
 Thumbs.db
+/assets
+/build
+/node_modules/
+/vendor/

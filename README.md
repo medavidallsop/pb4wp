@@ -161,7 +161,3 @@ Consider the following recommendations when developing your plugin:
 - [Lefthook](https://lefthook.dev) to check code before it is committed.
 - [PHPUnit](https://phpunit.de) to add unit tests.
 - [WPify Scoper](https://github.com/wpify/scoper) if using non-dev composer dependencies.
-
-# Contribute
-
-If you wish to contribute to this project, feel free to submit a PR. Thank you!
