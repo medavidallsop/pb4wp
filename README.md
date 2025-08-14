@@ -9,7 +9,9 @@
 
 # Plugin Boilerplate for WordPress (PB4WP)
 
-A boilerplate you can use as a foundation for building WordPress plugins by [David Allsop](https://davidallsop.com).
+A lightweight, best-practice boilerplate for building WordPress plugins quickly and cleanly.
+
+Created by [David Allsop](https://davidallsop.com).
 
 # Requirements
 
