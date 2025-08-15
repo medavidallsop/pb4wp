@@ -6,11 +6,6 @@
 			"VendorName\\PluginName\\": "src/"
 		}
 	},
-	"require-dev": {
-		"wp-cli/dist-archive-command": "@stable",
-		"wp-cli/i18n-command": "^2.6",
-		"wp-coding-standards/wpcs": "^3.0"
-	},
 	"scripts": {
 		"i18n-makejson": [
 			"wp i18n make-json i18n"
@@ -32,6 +27,11 @@
 			"mkdir -p build",
 			"wp dist-archive ./ ./build/"
 		]
+	},
+	"require-dev": {
+		"wp-cli/dist-archive-command": "@stable",
+		"wp-cli/i18n-command": "^2.6",
+		"wp-coding-standards/wpcs": "^3.0"
 	},
 	"config": {
 		"allow-plugins": {
