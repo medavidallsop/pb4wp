@@ -57,7 +57,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Flexible Asset System** - Support for both bundled and static assets
 - ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
 
-<small>*\*Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be omitted from `phpcs.xml` if needed.*</small>
+<small>*\* Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be omitted from `phpcs.xml` if needed.*</small>
 
 # Installation
 

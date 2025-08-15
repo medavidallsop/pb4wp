@@ -1,5 +1,6 @@
 {
 	"name": "vendor-name/plugin-name",
+	"version": "1.0.0",
 	"autoload": {
 		"psr-4": {
 			"VendorName\\PluginName\\": "src/"

@@ -1,5 +1,6 @@
 {
 	"name": "plugin-name",
+	"version": "1.0.0",
 	"scripts": {
 		"build": "pnpm run build:assets && pnpm run build:i18n",
 		"build:assets": "pnpm run build:assets:bundle && pnpm run build:assets:static",
