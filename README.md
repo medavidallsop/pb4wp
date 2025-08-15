@@ -65,7 +65,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 1. Rename the `plugin-name` folder and the inner `plugin-name.php` file in the folder.
 
-2. Find and replace the following **CASE SENSITIVE** terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
+2. Do a **CASE SENSITIVE** find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 
 | Original Term       | Replace With    |
 |---------------------|-----------------|
@@ -77,7 +77,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 | `VendorName`        | `ExampleVendor` |
 | `Vendor Name`       | `Example Vendor`|
 
->*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*
+<small>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*</small>
 
 3. Modify your renamed `plugin-name.php` to your requirements, e.g., plugin URI, description, etc.
 
