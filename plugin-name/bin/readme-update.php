@@ -57,7 +57,7 @@ $response = trim( fgets( $handle ) );
 fclose( $handle );
 
 if ( strtolower( $response ) !== 'y' && strtolower( $response ) !== 'yes' ) {
-	echo "Operation cancelled.\n";
+	echo "$readme update cancelled.\n";
 	exit( 0 );
 }
 
