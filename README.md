@@ -56,8 +56,8 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Example Code Structure** - Real-world class examples and patterns
 - ✅ **Flexible Asset System** - Support for both bundled and static assets
 - ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
-- ✅ **Readme.txt Updater** - Update WordPress tested up to and latest changelog date
-- ✅ **Version Checker** - Ensures all version numbers are set correctly
+- ✅ **Readme.txt Updater** - Updates tested up to version and latest changelog date
+- ✅ **Version Checker** - Ensures all version declarations match
 
 <small>*\* Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be omitted from `phpcs.xml` if needed.*</small>
 
@@ -146,17 +146,17 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `phpcs:fix`                 | Runs PHP CodeSniffer to automatically fix coding standard violations.                                                      | `pnpm run phpcs:fix`                 |
 | `prettier:check`            | Checks code formatting using Prettier.                                                                                     | `pnpm run prettier:check`            |
 | `prettier:fix`              | Fixes code formatting issues using Prettier.                                                                               | `pnpm run prettier:fix`              |
-| `readme:update`             | Updates readme.txt "Tested up to" to latest WordPress version and replace changelog date placeholder 0000-00-00 to today.  | `pnpm run readme:update`             |
-| `version:check`             | Checks version numbers in plugin header, readme.txt, etc are correct.                                                      | `pnpm run version:check`             |
+| `readme:update`             | Updates readme.txt "Tested up to" to latest WordPress version and replaces changelog date placeholder 0000-00-00 to today. | `pnpm run readme:update`             |
+| `version:check`             | Checks for matching version numbers in plugin header, readme.txt, etc.                                                     | `pnpm run version:check`             |
 | `watch`                     | Watches for CSS/SCSS/JS changes in /client and rebuilds in /assets.                                                        | `pnpm run watch`                     |
 | `zip`                       | Creates a zip file of the plugin.                                                                                          | `pnpm run zip`                       |
-| `zip:release`               | Same as `zip`, but updates readme.txt and checks version numbers.                                                          | `pnpm run zip:release`               |
+| `zip:release`               | Same as zip script, but checks version numbers and updates readme.txt before zipping.                                      | `pnpm run zip:release`               |
 
 Feel free to amend/remove these scripts as required, e.g., your project might not have any static assets.
 
 # Zip
 
-To genrate a zip, run the `pnpm run zip` or `pnp run zip:release` script, see differences in the scripts section above; to exclude specific files/folders, add them to `.distignore`.
+To genrate a zip, run `pnpm run zip` or `pnp run zip:release` script, see differences in the scripts section above; to exclude specific files/folders, add them to `.distignore`.
 
 The zip will be created in `/zip`. Note that the `build` script is run automatically before zipping.
 
