@@ -1,6 +1,6 @@
 .*
 .*/
-/build
+/zip
 node_modules/
 composer.json
 composer.lock

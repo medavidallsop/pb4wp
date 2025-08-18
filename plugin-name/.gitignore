@@ -2,6 +2,6 @@
 phpcs-report.txt
 Thumbs.db
 /assets
-/build
 /node_modules/
 /vendor/
+/zip

@@ -38,5 +38,5 @@ Answer to question 2.
 
 == Changelog ==
 
-= 1.0.0 - xxxx-xx-xx =
+= 1.0.0 - 0000-00-00 =
 * New: Plugin released
