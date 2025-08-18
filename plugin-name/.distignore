@@ -1,5 +1,6 @@
 .*
 .*/
+/bin
 /zip
 node_modules/
 composer.json

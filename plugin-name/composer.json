@@ -29,7 +29,7 @@
 			"php bin/version-check.php"
 		],
 		"zip": [
-			"read -p 'Are you sure you want to create a new zip? This will delete the existing zip folder. (y/N): ' -n 1 -r && [[ $REPLY =~ ^[Yy]$ ]] && (rm -rf zip && mkdir -p zip && wp dist-archive ./ ./zip/) || echo 'Zip creation cancelled.'"
+			"rm -rf zip && mkdir -p zip && wp dist-archive ./ ./zip/"
 		]
 	},
 	"require-dev": {
