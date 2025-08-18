@@ -4,7 +4,7 @@ $readme       = 'readme.txt';
 $api_url      = 'https://api.wordpress.org/core/stable-check/1.0/';
 $error_prefix = 'Readme.txt cannot be updated: ';
 
-// 1. Get latest WP version
+// Get latest WordPress version.
 $json = file_get_contents( $api_url );
 if ( false === $json ) {
 	fwrite( STDERR, $error_prefix . "Failed to fetch WordPress version data.\n" );
@@ -23,17 +23,17 @@ if ( ! $latest ) {
 	exit( 1 );
 }
 
-// 2. Read file
+// Read the readme file.
 $contents = file_get_contents( $readme );
 if ( false === $contents ) {
 	fwrite( STDERR, $error_prefix . "Failed to read $readme.\n" );
 	exit( 1 );
 }
 
-// 3. Show summary of changes
+// Show summary of changes.
 $today = date( 'Y-m-d' ); // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 
-// Find current "Tested up to" version.
+// Find current "Tested up to:" version.
 preg_match( '/Tested up to:\s*([\d.]+)/', $contents, $matches );
 $current_version = $matches[1] ?? 'unknown';
 
@@ -61,26 +61,22 @@ if ( strtolower( $response ) !== 'y' && strtolower( $response ) !== 'yes' ) {
 	exit( 0 );
 }
 
-// 4. Replace "Tested up to".
+// Replace "Tested up to".
 $contents = preg_replace(
 	'/Tested up to:\s*[\d.]+/',
 	"Tested up to: $latest",
 	$contents
 );
 
-// 5. Replace "0000-00-00" with today's date.
+// Replace "0000-00-00" with today's date.
 $contents = preg_replace(
 	'/0000-00-00/',
 	$today,
 	$contents
 );
 
-// 6. Save file.
-// file_put_contents($readme, $contents);
+// Save file.
+file_put_contents($readme, $contents);
 
-
-echo "\nUpdated $readme:\n";
-echo " - Tested up to now: $latest\n";
-if ( $has_date_placeholder ) {
-	echo " - Changelog date placeholder now: $today\n";
-}
+// Show summary of changes.
+echo "\nUpdated $readme\n";
