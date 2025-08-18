@@ -76,7 +76,7 @@ $contents = preg_replace(
 );
 
 // Save file.
-file_put_contents($readme, $contents);
+file_put_contents( $readme, $contents );
 
 // Show summary of changes.
 echo "\n✅ Updated $readme\n";
