@@ -41,7 +41,7 @@ $current_version = $matches[1] ?? 'unknown';
 preg_match( '/0000-00-00/', $contents, $date_matches );
 $has_date_placeholder = ! empty( $date_matches );
 
-echo "Summary of changes to be made:\n";
+echo "\nSummary of changes to be made:\n";
 echo " - Tested up to: $current_version → $latest\n";
 if ( $has_date_placeholder ) {
 	echo " - Changelog date placeholder: 0000-00-00 → $today\n";
@@ -79,4 +79,4 @@ $contents = preg_replace(
 file_put_contents($readme, $contents);
 
 // Show summary of changes.
-echo "\nUpdated $readme\n";
+echo "\n✅ Updated $readme\n";
