@@ -38,6 +38,7 @@
 		"wp-coding-standards/wpcs": "^3.0"
 	},
 	"config": {
+		"autoloader-suffix": "VendorNamePluginName",
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}

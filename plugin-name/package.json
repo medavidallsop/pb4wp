@@ -1,5 +1,5 @@
 {
-	"name": "plugin-name",
+	"name": "vendor-name/plugin-name",
 	"version": "1.0.0",
 	"scripts": {
 		"build": "echo '\u001b[32mRunning build...\u001b[0m' && pnpm run build:assets && pnpm run build:i18n",

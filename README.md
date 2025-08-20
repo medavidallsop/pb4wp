@@ -69,15 +69,17 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 2. Do a **CASE SENSITIVE** find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 
-| Original Term       | Replace With    |
-|---------------------|-----------------|
-| `plugin-name`       | `example-name`  |
-| `plugin_name`       | `example_name`  |
-| `Plugin_Name`       | `Example_Name`  |
-| `PLUGIN_NAME_`      | `EXAMPLE_NAME_` |
-| `Plugin Name`*      | `Example Name`  |
-| `VendorName`        | `ExampleVendor` |
-| `Vendor Name`       | `Example Vendor`|
+| Original Term  | Replace With     |
+|----------------|------------------|
+| `plugin-name`  | `example-name`   |
+| `plugin_name`  | `example_name`   |
+| `Plugin Name`  | `Example Name`   |
+| `Plugin_Name`  | `Example_Name`   |
+| `PluginName`   | `ExampleName`    |
+| `PLUGIN_NAME_` | `EXAMPLE_NAME_`  |
+| `vendor-name`  | `example-vendor` |
+| `Vendor Name`  | `Example Vendor` |
+| `VendorName`   | `ExampleVendor`  |
 
 <small>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*</small>
 
