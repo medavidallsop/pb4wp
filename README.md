@@ -57,9 +57,9 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Flexible Asset System** - Support for both bundled and static assets
 - ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
 - ✅ **Readme.txt Updater** - Updates tested up to version and latest changelog date
-- ✅ **Version Checker** - Ensures all version declarations match
+- ✅ **Version Checker** - Validates version number consistency across plugin files and documentation
 
-<small>*\* Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` rule - but this can be omitted from `phpcs.xml` if needed.*</small>
+<small>*\* Checks and/or fixes issues with PHP, JS, CSS, etc., excluding PHPCS `Squiz.Commenting.FileComment.Missing` - you can include this rule if needed by removing the line in `phpcs.xml.*</small>
 
 # Installation
 
