@@ -61,7 +61,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 # Installation
 
-1. Rename the `plugin-name` folder and the inner `plugin-name.php` file in the folder.
+1. Rename the `plugin-name` folder, and these files: `plugin-name/plugin-name.php` and `plugin-name/i18n/languages/plugin-name.pot`.
 
 2. Do a find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 

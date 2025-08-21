@@ -127,7 +127,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		/**
 		 * Load plugin textdomain for translations.
 		 *
-		 * The load_plugin_textdomain function is no longer needed in WordPress 6.8+.
+		 * The load_plugin_textdomain function is not needed in WordPress v4.6+ for WordPress.org plugins (and v6.8+ for self-hosted).
 		 * It is still included here to ensure compatibility with older WordPress versions.
 		 *
 		 * @return void

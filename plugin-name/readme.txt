@@ -33,7 +33,7 @@ Answer to question 2.
 
 == Screenshots ==
 
-1. This screenshot description corresponds to screenshot-1.(extension). Screenshots are stored in the /assets directory.
+1. This screenshot description corresponds to screenshot-1.(extension). Screenshots are stored in the /assets folder.
 2. This is the second screenshot
 
 == Changelog ==
