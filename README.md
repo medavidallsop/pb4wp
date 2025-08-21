@@ -74,7 +74,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 | `Plugin Name`  | `Example Name`   |
 | `Plugin_Name`  | `Example_Name`   |
 | `PluginName`   | `ExampleName`    |
-| `PLUGIN_NAME_` | `EXAMPLE_NAME_`  |
+| `PLUGIN_NAME`  | `EXAMPLE_NAME`   |
 | `vendor-name`  | `example-vendor` |
 | `Vendor Name`  | `Example Vendor` |
 | `VendorName`   | `ExampleVendor`  |
