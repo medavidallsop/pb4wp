@@ -15,8 +15,6 @@ Created by [David Allsop](https://davidallsop.com).
 
 # Requirements
 
->TL;DR: Use a POSIX OS and ensure `php`, `composer`, `pnpm`, and `wp` terminal commands are available globally.
-
 A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're working on a Windows machine, the recommended approach is to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (available since Windows 10).
 
 - [Composer](https://getcomposer.org/doc/00-intro.md)
@@ -63,11 +61,11 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 # Installation
 
->TL;DR: Rename the folder, and the files and their contents to your plugin/vendor name, then run `composer install` then `pnpm install` from the folder.
-
 1. Rename the `plugin-name` folder and the inner `plugin-name.php` file in the folder.
 
-2. Do a **CASE SENSITIVE** find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
+2. Do a find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
+
+> ⚠️ **IMPORTANT: All these values are case-sensitive. Do not modify `Plugin Name:` in your plugin header.**
 
 | Original Term  | Replace With     |
 |----------------|------------------|
@@ -80,8 +78,6 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 | `vendor-name`  | `example-vendor` |
 | `Vendor Name`  | `Example Vendor` |
 | `VendorName`   | `ExampleVendor`  |
-
-<small>*\* **DO NOT** replace `Plugin Name:` in your renamed `plugin-name.php`.*</small>
 
 3. Modify your renamed `plugin-name.php` to your requirements, e.g., plugin URI, description, etc.
 
