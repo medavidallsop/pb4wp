@@ -23,6 +23,14 @@ if ( ! $latest ) {
 	exit( 1 );
 }
 
+// Extract major.minor version (e.g., 6.9 from 6.9.2).
+$version_parts = explode( '.', $latest );
+if ( count( $version_parts ) >= 2 ) {
+	$latest_major_minor = $version_parts[0] . '.' . $version_parts[1];
+} else {
+	$latest_major_minor = $latest; // Fallback to full version if parsing fails
+}
+
 // Read the readme file.
 $contents = file_get_contents( $readme );
 if ( false === $contents ) {
@@ -42,7 +50,7 @@ preg_match( '/0000-00-00/', $contents, $date_matches );
 $has_date_placeholder = ! empty( $date_matches );
 
 echo "\nSummary of changes to be made:\n";
-echo " - Tested up to: $current_version → $latest\n";
+echo " - Tested up to: $current_version → $latest_major_minor\n";
 if ( $has_date_placeholder ) {
 	echo " - Changelog date placeholder: 0000-00-00 → $today\n";
 } else {
@@ -64,7 +72,7 @@ if ( strtolower( $response ) !== 'y' && strtolower( $response ) !== 'yes' ) {
 // Replace "Tested up to".
 $contents = preg_replace(
 	'/Tested up to:\s*[\d.]+/',
-	"Tested up to: $latest",
+	"Tested up to: $latest_major_minor",
 	$contents
 );
 
