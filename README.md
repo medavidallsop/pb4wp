@@ -61,7 +61,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 # Installation
 
-1. Rename the `plugin-name` folder, `plugin-name/plugin-name.php` and `plugin-name/i18n/languages/plugin-name.pot`.
+1. Rename the `plugin-name` folder, `plugin-name.php` and `/i18n/languages/plugin-name.pot`.
 
 2. Do a find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 
@@ -69,21 +69,21 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 | Original Term  | Replace With     |
 |----------------|------------------|
+| `Plugin Name`  | `Example Name`   |
+| `PluginName`   | `ExampleName`    |
 | `plugin-name`  | `example-name`   |
 | `plugin_name`  | `example_name`   |
-| `Plugin Name`  | `Example Name`   |
 | `Plugin_Name`  | `Example_Name`   |
-| `PluginName`   | `ExampleName`    |
 | `PLUGIN_NAME`  | `EXAMPLE_NAME`   |
-| `vendor-name`  | `example-vendor` |
 | `Vendor Name`  | `Example Vendor` |
 | `VendorName`   | `ExampleVendor`  |
+| `vendor-name`  | `example-vendor` |
 
 3. Modify your renamed `plugin-name.php` to your requirements, e.g., plugin URI, description, etc.
 
-4. Modify `readme.txt` to your requirements, e.g., contributors, tags, etc. I recommend comparing your readme.txt to the [WordPress.org example](https://wordpress.org/plugins/readme.txt). You can also [validate your readme.txt](https://wordpress.org/plugins/developers/readme-validator/).
+4. Modify `readme.txt` to your requirements, e.g., contributors, tags, etc. Compare your readme.txt to the [WordPress.org example](https://wordpress.org/plugins/readme.txt), and [validate your readme.txt](https://wordpress.org/plugins/developers/readme-validator/).
 
-5. Add the folder to your WordPress `/wp-content/plugins` folder, or symlink it from another location.
+5. Add your renamed `plugin-name` folder to your WordPress `/wp-content/plugins` folder, or symlink it from another location.
 
 6. In your terminal from your renamed `plugin-name` folder, run these commands:
 
