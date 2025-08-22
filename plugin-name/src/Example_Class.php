@@ -29,6 +29,6 @@ class Example_Class {
 	 * @since 1.0.0
 	 */
 	public function example(): void {
-		esc_html_e( 'Example class from PB4WP.', 'plugin-name' );
+		esc_html_e( 'Example_Class for Plugin Name.', 'plugin-name' );
 	}
 }
