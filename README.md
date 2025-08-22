@@ -140,8 +140,8 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `build:assets:static:scss`  | Builds static SCSS assets.                                                                                                 | `pnpm run build:assets:static:scss`  |
 | `build:assets:static:js`    | Builds static JS assets.                                                                                                   | `pnpm run build:assets:static:js`    |
 | `build:i18n`                | Generates internationalization (i18n) files for the plugin.                                                                | `pnpm run build:i18n`                |
-| `phpcs:check`               | Runs PHP CodeSniffer to check for coding standard violations.                                                              | `pnpm run phpcs:check`               |
-| `phpcs:fix`                 | Runs PHP CodeSniffer to automatically fix coding standard violations.                                                      | `pnpm run phpcs:fix`                 |
+| `phpcs:check`               | Runs PHP CodeSniffer to check for coding standard violations, logged to phpcs-report.txt.                                  | `pnpm run phpcs:check`               |
+| `phpcs:fix`                 | Runs PHP CodeSniffer (phpcbf) to automatically fix coding standard violations.                                             | `pnpm run phpcs:fix`                 |
 | `prettier:check`            | Checks code formatting using Prettier.                                                                                     | `pnpm run prettier:check`            |
 | `prettier:fix`              | Fixes code formatting issues using Prettier.                                                                               | `pnpm run prettier:fix`              |
 | `readme:update`             | Updates readme.txt "Tested up to" to latest WordPress version and replaces changelog date placeholder 0000-00-00 to today. | `pnpm run readme:update`             |

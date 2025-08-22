@@ -28,7 +28,7 @@ $version_parts = explode( '.', $latest );
 if ( count( $version_parts ) >= 2 ) {
 	$latest_major_minor = $version_parts[0] . '.' . $version_parts[1];
 } else {
-	$latest_major_minor = $latest; // Fallback to full version if parsing fails
+	$latest_major_minor = $latest; // Fallback to full version if parsing fails.
 }
 
 // Read the readme file.
