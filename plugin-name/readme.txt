@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: (comma separated list of WordPress.org usernames)
-Donate link: https://example.com/
+Donate link: https://example.com
 Tags: tag1, tag2, tag3, tag4, tag5
 Requires at least: 5.0.0
 Tested up to: 6.8
@@ -9,7 +9,7 @@ Requires PHP: 7.4.0
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Here is a short description of the plugin. This should be no more than 150 characters.
+This is the short description of the plugin, no more than 150 characters.
 
 == Description ==
 
@@ -33,8 +33,8 @@ Answer to question 2.
 
 == Screenshots ==
 
-1. This screenshot description corresponds to screenshot-1.(extension). Screenshots are stored in the /assets folder.
-2. This is the second screenshot
+1. This screenshot description corresponds to screenshot-1.(extension) in a WordPress.org plugin repository.
+2. This is the second screenshot deescription.
 
 == Changelog ==
 
