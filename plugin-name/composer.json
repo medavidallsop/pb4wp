@@ -14,7 +14,7 @@
 			"wp i18n make-mo i18n"
 		],
 		"i18n-makepot": [
-			"wp i18n make-pot . i18n/languages/plugin-name.pot --exclude=\".github,.wordpress-org,node_modules,vendor,build,deploy\""
+			"wp i18n make-pot . i18n/languages/plugin-name.pot --exclude=\"node_modules,vendor\" --file-comment=\"\" --headers='{\"Report-Msgid-Bugs-To\":\"\",\"Last-Translator\":\"\",\"Language-Team\":\"\"}'"
 		],
 		"phpcs-check": [
 			"phpcs --extensions=php,html --report-full=phpcs-report.txt --report-source ."
