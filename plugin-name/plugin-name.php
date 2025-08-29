@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Plugin Name
  * Plugin URI: https://example.com
- * Description: Lore ipsum dolor sit amet.
+ * Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
  * Author: Vendor Name
  * Author URI: https://example.com
  * Version: 1.0.0
