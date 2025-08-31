@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-31T06:16:32+00:00\n"
+"POT-Creation-Date: 2025-08-31T06:31:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: plugin-name\n"
@@ -38,10 +38,10 @@ msgstr ""
 msgid "Example method for Plugin Name."
 msgstr ""
 
-#: assets/bundle/example-bundle.js:13
+#: assets/bundle/example-bundle.js:14
 msgid "Example translated string (example-bundle)."
 msgstr ""
 
-#: assets/static/example-js.js:2
+#: assets/static/example-js.js:3
 msgid "Example translated string (example-js)."
 msgstr ""

@@ -2,7 +2,7 @@
 	"name": "vendor-name/plugin-name",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "echo '\u001b[32mRunning build...\u001b[0m' && pnpm run build:assets && pnpm run build:i18n",
+		"build": "echo '\u001b[32mRunning build...\u001b[0m' && pnpm run build:i18n",
 		"build:assets": "echo '\u001b[32mRunning build:assets...\u001b[0m' && pnpm run build:assets:bundle && pnpm run build:assets:static",
 		"build:assets:bundle": "echo '\u001b[32mRunning build:assets:bundle...\u001b[0m' && npx webpack --config webpack.config.js",
 		"build:assets:static": "echo '\u001b[32mRunning build:assets:static...\u001b[0m' && pnpm run build:assets:static:css && pnpm run build:assets:static:scss && pnpm run build:assets:static:js",

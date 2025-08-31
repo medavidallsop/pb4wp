@@ -132,7 +132,7 @@ There are several included PNPM scripts which can be run, some of which in turn 
 
 | Command                     | Description                                                                                                                | Usage                                |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| `build`                     | Builds the plugin, including assets and other necessary files.                                                             | `pnpm run build`                     |
+| `build`                     | Builds the plugin, including assets and i18n files.                                                                        | `pnpm run build`                     |
 | `build:assets`              | Builds all assets (CSS, JS, etc.) for the plugin.                                                                          | `pnpm run build:assets`              |
 | `build:assets:bundle`       | Builds bundled assets (e.g., combined JS/CSS files).                                                                       | `pnpm run build:assets:bundle`       |
 | `build:assets:static`       | Builds static assets (e.g., standalone CSS/JS files).                                                                      | `pnpm run build:assets:static`       |
