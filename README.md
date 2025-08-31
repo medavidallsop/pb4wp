@@ -128,7 +128,7 @@ The classes are autoloaded by Composer and get instantiated from `plugin-name.ph
 
 # Scripts
 
-There are several included PNPM scripts which can be run, some of which in turn run the associated Composer scripts:
+There are several included PNPM scripts which can be run, some of which in turn run the associated Composer scripts. It is recommended to use these rather than the Composer scripts directly:
 
 | Command                     | Description                                                                                                                | Usage                                |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
