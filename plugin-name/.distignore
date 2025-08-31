@@ -1,6 +1,7 @@
 .*
 .*/
 /bin
+/client
 /zip
 node_modules/
 composer.json

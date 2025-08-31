@@ -8,13 +8,16 @@
 	},
 	"scripts": {
 		"i18n-makejson": [
-			"wp i18n make-json i18n"
+			"wp i18n make-json i18n/languages --no-purge"
 		],
 		"i18n-makemo": [
-			"wp i18n make-mo i18n"
+			"wp i18n make-mo i18n/languages"
 		],
 		"i18n-makepot": [
-			"wp i18n make-pot . i18n/languages/plugin-name.pot --exclude=\"node_modules,vendor\" --file-comment=\"\" --headers='{\"Report-Msgid-Bugs-To\":\"\",\"Last-Translator\":\"\",\"Language-Team\":\"\"}'"
+			"wp i18n make-pot . i18n/languages/plugin-name.pot --exclude=\"client,node_modules,vendor\" --file-comment=\"If copying the contents of this file to a .po file remember to add a Language: xx_XX header.\" --headers='{\"Report-Msgid-Bugs-To\":\"\",\"Last-Translator\":\"\",\"Language-Team\":\"\"}'"
+		],
+		"i18n-updatepo": [
+			"wp i18n update-po i18n/languages/plugin-name.pot"
 		],
 		"phpcs-check": [
 			"phpcs --extensions=php,html --report-full=phpcs-report.txt --report-source ."

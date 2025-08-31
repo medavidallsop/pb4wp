@@ -103,11 +103,11 @@ The `client` folder has 2 asset handling examples:
 | `client/bundle`                  | Bundled assets. See the comments in `example-bundle.js` for import examples.  |
 | `client/static`                  | Static assets. Includes examples of CSS/SCSS/JS files.                        |
 
-Build them using `build:assets` to see the resulting files. The compiled and minified files will be added to `assets` to be enqueued.
+Build them using `build:assets` to see the resulting files. The files will be added to `assets` to be enqueued.
 
 You should replace these with your assets as per your requirements or remove them if no assets needed. (Ensure you amend the scripts in `package.json` accordingly).
 
-Note when enqueuing your assets, it is recommended to enqueue the compiled version in `/assets`, not `/client`, as the assets folder contains the compiled/minified assets, whereas client are the source files.
+Note when enqueuing your assets, enqueue from `/assets`, not `/client` as these are the source files.
 
 If your project relies on a JS library, rather than enqueueing the JS library, it is recommended to bundle this with the script files which rely on it.
 
@@ -117,7 +117,7 @@ General and lifecycle-based code examples are included. Amend or remove these as
 
 | File                            | Description                                                     |
 |---------------------------------|-----------------------------------------------------------------|
-| `src/Example_Class.php`         | Example of a class.                                             |
+| `src/Example_Class.php`         | Example of a class, includes enqueue examples.                  |
 | `src/Lifecycle/Activator.php`   | Can be used for activation, e.g., setting a transient.          |
 | `src/Lifecycle/Deactivator.php` | Can be used for deactivation, e.g., clearing scheduled hooks.   |
 | `src/Lifecycle/Installer.php`   | Can be used for installation, e.g., creating database tables.   |
