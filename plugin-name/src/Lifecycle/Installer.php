@@ -24,7 +24,7 @@ class Installer {
 	 * @since 1.0.0
 	 */
 	public static function install(): void {
-		// Do any installation tasks, then update the version number so in future the installer doesn't run again and the updater knows the current version to compare to.
-		update_option( 'plugin_name_version', PLUGIN_NAME_PLUGIN_VERSION );
+		// Do any installation tasks, then add the version number so in future the installer doesn't run again and the updater knows the current version to compare to.
+		add_option( 'plugin_name_version', PLUGIN_NAME_PLUGIN_VERSION );
 	}
 }
