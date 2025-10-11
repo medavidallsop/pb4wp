@@ -1,7 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const fs = require('fs');
 
 // Base configuration shared between minified and non-minified
 const baseConfig = {
