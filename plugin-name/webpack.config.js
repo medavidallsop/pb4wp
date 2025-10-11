@@ -4,7 +4,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 // Base configuration shared between minified and non-minified
 const baseConfig = {
-	entry: './client/bundle/example-bundle.js',
+	entry: {
+		'example-bundle': './client/bundle/example-bundle.js', // Add more entries as needed
+	},
 	stats: 'minimal',
 	cache: {
 		type: 'filesystem', // Use filesystem cache
@@ -27,12 +29,12 @@ const baseConfig = {
 const minifiedConfig = {
 	...baseConfig,
 	output: {
-		filename: 'example-bundle.min.js',
+		filename: '[name].min.js',
 		path: path.resolve(__dirname, 'assets/bundle'),
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'example-bundle.min.css',
+			filename: '[name].min.css',
 		}),
 	],
 	optimization: {
@@ -49,13 +51,13 @@ Not possible to extract strings from /client source files then enqueued from the
 const nonMinifiedConfig = {
 	...baseConfig,
 	output: {
-		filename: 'example-bundle.js',
+		filename: '[name].js',
 		path: path.resolve(__dirname, 'assets/bundle'),
 		clean: false, // Don't clean the output directory to preserve minified files
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'example-bundle.css',
+			filename: '[name].css',
 		}),
 	],
 	optimization: {
