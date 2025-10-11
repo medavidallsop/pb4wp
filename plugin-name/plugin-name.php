@@ -89,6 +89,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		 * @since 1.0.0
 		 */
 		private function define_constants(): void {
+			define( 'PLUGIN_NAME_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 			define( 'PLUGIN_NAME_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 			define( 'PLUGIN_NAME_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 			define( 'PLUGIN_NAME_PLUGIN_VERSION', $this->version );
