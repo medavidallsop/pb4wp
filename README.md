@@ -105,7 +105,7 @@ The `client` folder has 2 asset handling examples:
 
 Build them using `build:assets` to see the resulting files. The files will be added to `assets` to be enqueued.
 
-You should replace these with your assets as per your requirements or remove them if no assets needed. (Ensure you amend the scripts in `package.json` accordingly).
+You should replace these with your assets as per your requirements or remove them if not needed. Amend the `package.json` and `webpack.config.js` scripts/dependencies accordingly.
 
 Note when enqueuing your assets, enqueue from `/assets`, not `/client` as these are the source files.
 
@@ -150,7 +150,7 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `zip`                       | Creates a zip file of the plugin.                                                                                          | `pnpm run zip`                       |
 | `zip:release`               | Same as zip script, but checks version numbers and updates readme.txt before zipping.                                      | `pnpm run zip:release`               |
 
-Feel free to amend/remove these scripts as required, e.g., your project might not have any static assets.
+Amend/remove these scripts as required.
 
 # Zip
 
