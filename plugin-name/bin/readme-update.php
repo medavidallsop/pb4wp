@@ -2,7 +2,7 @@
 
 $readme       = 'readme.txt';
 $api_url      = 'https://api.wordpress.org/core/stable-check/1.0/';
-$error_prefix = 'Readme.txt cannot be updated: ';
+$error_prefix = '❌ Readme.txt cannot be updated: ';
 
 // Get latest WordPress version.
 $json = file_get_contents( $api_url );
@@ -65,7 +65,7 @@ $response = trim( fgets( $handle ) );
 fclose( $handle );
 
 if ( strtolower( $response ) !== 'y' && strtolower( $response ) !== 'yes' ) {
-	echo "$readme update cancelled.\n";
+	echo "❌ $readme update cancelled.\n";
 	exit( 0 );
 }
 
