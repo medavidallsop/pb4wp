@@ -48,15 +48,36 @@ preg_match_all(
 );
 $changelog_versions = $matches[1] ?? array();
 
+// Extract version from composer.json.
+$composer_file = 'composer.json';
+$composer_content = file_get_contents( $composer_file );
+$composer_data = json_decode( $composer_content, true );
+if ( ! $composer_data || ! isset( $composer_data['version'] ) ) {
+	fwrite( STDERR, "❌ Could not find version in $composer_file\n" );
+	exit( 1 );
+}
+$composer_version = $composer_data['version'];
+
+// Extract version from package.json.
+$package_file = 'package.json';
+$package_content = file_get_contents( $package_file );
+$package_data = json_decode( $package_content, true );
+if ( ! $package_data || ! isset( $package_data['version'] ) ) {
+	fwrite( STDERR, "❌ Could not find version in $package_file\n" );
+	exit( 1 );
+}
+$package_version = $package_data['version'];
+
 // Compare versions.
 $ok = true;
+$mismatch_prefix = "❌ Version mismatch: version property ($base_version)";
 
 if ( $base_version !== $plugin_version ) {
-	fwrite( STDERR, "❌ Version mismatch: version property ($base_version) != plugin header ($plugin_version)\n" );
+	fwrite( STDERR, "$mismatch_prefix != plugin header ($plugin_version)\n" );
 	$ok = false;
 }
 if ( $base_version !== $readme_version ) {
-	fwrite( STDERR, "❌ Version mismatch: version property ($base_version) != readme.txt stable tag ($readme_version)\n" );
+	fwrite( STDERR, "$mismatch_prefix != readme.txt stable tag ($readme_version)\n" );
 	$ok = false;
 }
 if ( empty( $changelog_versions ) ) {
@@ -65,13 +86,21 @@ if ( empty( $changelog_versions ) ) {
 } else {
 	$latest_changelog = $changelog_versions[0];
 	if ( $base_version !== $latest_changelog ) {
-		fwrite( STDERR, "❌ Version mismatch: version property ($base_version) != latest changelog entry ($latest_changelog)\n" );
+		fwrite( STDERR, "$mismatch_prefix != latest changelog entry ($latest_changelog)\n" );
 		$ok = false;
 	}
 	if ( isset( $changelog_versions[1] ) && $latest_changelog === $changelog_versions[1] ) {
 		fwrite( STDERR, "❌ Changelog problem: latest entry ($latest_changelog) is the same as the previous one.\n" );
 		$ok = false;
 	}
+}
+if ( $base_version !== $composer_version ) {
+	fwrite( STDERR, "$mismatch_prefix != composer.json version ($composer_version)\n" );
+	$ok = false;
+}
+if ( $base_version !== $package_version ) {
+	fwrite( STDERR, "$mismatch_prefix != package.json version ($package_version)\n" );
+	$ok = false;
 }
 
 if ( $ok ) {
