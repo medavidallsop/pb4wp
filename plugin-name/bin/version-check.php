@@ -49,9 +49,9 @@ preg_match_all(
 $changelog_versions = $matches[1] ?? array();
 
 // Extract version from composer.json.
-$composer_file = 'composer.json';
+$composer_file    = 'composer.json';
 $composer_content = file_get_contents( $composer_file );
-$composer_data = json_decode( $composer_content, true );
+$composer_data    = json_decode( $composer_content, true );
 if ( ! $composer_data || ! isset( $composer_data['version'] ) ) {
 	fwrite( STDERR, "❌ Could not find version in $composer_file\n" );
 	exit( 1 );
@@ -59,9 +59,9 @@ if ( ! $composer_data || ! isset( $composer_data['version'] ) ) {
 $composer_version = $composer_data['version'];
 
 // Extract version from package.json.
-$package_file = 'package.json';
+$package_file    = 'package.json';
 $package_content = file_get_contents( $package_file );
-$package_data = json_decode( $package_content, true );
+$package_data    = json_decode( $package_content, true );
 if ( ! $package_data || ! isset( $package_data['version'] ) ) {
 	fwrite( STDERR, "❌ Could not find version in $package_file\n" );
 	exit( 1 );
@@ -69,7 +69,7 @@ if ( ! $package_data || ! isset( $package_data['version'] ) ) {
 $package_version = $package_data['version'];
 
 // Compare versions.
-$ok = true;
+$ok              = true;
 $mismatch_prefix = "❌ Version mismatch: version property ($base_version)";
 
 if ( $base_version !== $plugin_version ) {
