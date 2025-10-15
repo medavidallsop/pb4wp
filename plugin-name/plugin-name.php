@@ -104,25 +104,8 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		private function init_hooks(): void {
 			register_activation_hook( __FILE__, array( Activator::class, 'activate' ) );
 			register_deactivation_hook( __FILE__, array( Deactivator::class, 'deactivate' ) );
-			add_action( 'plugins_loaded', array( $this, 'install_or_update' ) );
 			add_action( 'init', array( $this, 'load_textdomain' ) );
-		}
-
-		/**
-		 * Install or update the plugin.
-		 *
-		 * This method checks if the plugin is being installed for the first time or if it is being updated.
-		 * It calls the appropriate method from the Installer or Updater class.
-		 *
-		 * @return void
-		 * @since 1.0.0
-		 */
-		public function install_or_update(): void {
-			if ( ! get_option( 'plugin_name_version' ) ) {
-				Installer::install();
-			} elseif ( get_option( 'plugin_name_version' ) !== $this->version ) {
-				Updater::update();
-			}
+			add_action( 'init', array( $this, 'install_or_update' ) ); // After load_textdomain as i18n strings maybe needed in install/update tasks.
 		}
 
 		/**
@@ -140,6 +123,23 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 				false,
 				dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/'
 			);
+		}
+
+		/**
+		 * Install or update the plugin.
+		 *
+		 * This method checks if the plugin is being installed for the first time or if it is being updated.
+		 * It calls the appropriate method from the Installer or Updater class.
+		 *
+		 * @return void
+		 * @since 1.0.0
+		 */
+		public function install_or_update(): void {
+			if ( ! get_option( 'plugin_name_version' ) ) {
+				Installer::install();
+			} elseif ( get_option( 'plugin_name_version' ) !== $this->version ) {
+				Updater::update();
+			}
 		}
 
 		/**
