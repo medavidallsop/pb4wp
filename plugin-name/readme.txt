@@ -36,6 +36,16 @@ Answer to question 2.
 1. This screenshot description corresponds to screenshot-1.(extension) in a WordPress.org plugin repository.
 2. This is the second screenshot deescription.
 
+== Installation ==
+
+= Installation =
+
+Please see [this documentation](https://wordpress.org/support/article/managing-plugins/#installing-plugins-1).
+
+= Updates =
+
+Please see [this documentation](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins).
+
 == Changelog ==
 
 = 1.0.0 - 0000-00-00 =
