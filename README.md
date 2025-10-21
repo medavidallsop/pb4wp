@@ -29,7 +29,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 
 ## 🚀 **Modern Development Stack**
 - ✅ **PSR-4 Autoloading** - Clean, standards-compliant class loading with Composer
-- ✅ **Modern PHP+** - Strict typing, namespaces, and modern PHP features
+- ✅ **Modern PHP** - Strict typing, namespaces, and modern PHP features
 - ✅ **Webpack Asset Pipeline** - Advanced bundling, minification, and optimization
 - ✅ **PNPM Package Manager** - Fast, efficient dependency management
 
