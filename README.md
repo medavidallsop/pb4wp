@@ -105,9 +105,7 @@ Build them using `build:assets` to see the resulting files. The files will be ad
 
 You should replace these with your assets as per your requirements or remove them if not needed. Amend the `package.json` and `webpack.config.js` scripts/dependencies accordingly.
 
-Note when enqueuing your assets, enqueue from `/assets`, not `/client` as these are the source files.
-
-If your project relies on a JS library, rather than enqueueing the JS library, it is recommended to bundle this with the script files which rely on it.
+When enqueuing your assets, enqueue from `/assets`, not `/client` as these are the source files.
 
 # PHP
 
@@ -131,12 +129,12 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | Command                     | Description                                                                                                                | Usage                                |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | `build`                     | Builds the plugin, including assets and i18n files.                                                                        | `pnpm run build`                     |
-| `build:assets`              | Builds all assets (CSS, JS, etc.) for the plugin.                                                                          | `pnpm run build:assets`              |
-| `build:assets:bundle`       | Builds bundled assets (e.g., combined JS/CSS files).                                                                       | `pnpm run build:assets:bundle`       |
-| `build:assets:static`       | Builds static assets (e.g., standalone CSS/JS files).                                                                      | `pnpm run build:assets:static`       |
-| `build:assets:static:css`   | Builds static CSS assets.                                                                                                  | `pnpm run build:assets:static:css`   |
-| `build:assets:static:scss`  | Builds static SCSS assets.                                                                                                 | `pnpm run build:assets:static:scss`  |
-| `build:assets:static:js`    | Builds static JS assets.                                                                                                   | `pnpm run build:assets:static:js`    |
+| `build:assets`              | Builds all assets.                                                                                                         | `pnpm run build:assets`              |
+| `build:assets:bundle`       | Builds only bundled assets.                                                                                                | `pnpm run build:assets:bundle`       |
+| `build:assets:static`       | Builds only static assets                                                                                                  | `pnpm run build:assets:static`       |
+| `build:assets:static:css`   | Builds only static CSS assets.                                                                                             | `pnpm run build:assets:static:css`   |
+| `build:assets:static:scss`  | Builds only static SCSS assets.                                                                                            | `pnpm run build:assets:static:scss`  |
+| `build:assets:static:js`    | Builds only static JS assets.                                                                                              | `pnpm run build:assets:static:js`    |
 | `build:i18n`                | Generates internationalization (i18n) files for the plugin.                                                                | `pnpm run build:i18n`                |
 | `phpcs:check`               | Runs PHP CodeSniffer to check for coding standard violations, logged to phpcs-report.txt.                                  | `pnpm run phpcs:check`               |
 | `phpcs:fix`                 | Runs PHP CodeSniffer (phpcbf) to automatically fix coding standard violations.                                             | `pnpm run phpcs:fix`                 |
