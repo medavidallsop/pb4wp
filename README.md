@@ -55,11 +55,11 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Flexible Asset System** - Support for both bundled and static assets
 - ✅ **Cross-Platform Compatible** - Works on macOS, Linux, and Windows (WSL)
 - ✅ **Readme.txt Updater** - Updates tested up to version and latest changelog date
-- ✅ **Version Checker** - Validates version number consistency across plugin files and documentation
+- ✅ **Version Checker** - Validates version numbers across plugin files and documentation
 
 # Installation
 
-1. Rename the `plugin-name` folder, `plugin-name.php` and `/i18n/languages/plugin-name.pot`.
+1. Clone the repo, and rename the `plugin-name` folder, `plugin-name.php` and `/i18n/languages/plugin-name.pot` to your plugin name.
 
 2. Do a find and replace of these terms, e.g., if the plugin is `Example Name` by `Example Vendor` then:
 
@@ -142,6 +142,7 @@ There are several included PNPM scripts which can be run, some of which in turn 
 | `prettier:fix`              | Fixes code formatting issues using Prettier.                                                                               | `pnpm run prettier:fix`              |
 | `readme:update`             | Updates readme.txt "Tested up to" to latest WordPress version and replaces changelog date placeholder 0000-00-00 to today. | `pnpm run readme:update`             |
 | `version:check`             | Checks for matching version numbers in plugin header, readme.txt, etc.                                                     | `pnpm run version:check`             |
+| `version:wp:check`          | Checks the minimum WordPress version requirement is accurate based on use of core WordPress functions, classes, etc.       | `pnpm run version:wp:check`          |
 | `watch`                     | Watches for CSS/SCSS/JS changes in /client and rebuilds in /assets.                                                        | `pnpm run watch`                     |
 | `zip`                       | Creates a zip file of the plugin.                                                                                          | `pnpm run zip`                       |
 | `zip:release`               | Same as zip script, but checks version numbers and updates readme.txt before zipping.                                      | `pnpm run zip:release`               |

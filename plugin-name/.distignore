@@ -1,17 +1,31 @@
+# Ignore all hidden files and hidden directories (anywhere)
 .*
 .*/
+
+# Ignore specific development/build directories (root)
 /bin
 /client
 /zip
+
+# Ignore node_modules directories (anywhere)
 node_modules/
+
+# Ignore dependency and package manager files (anywhere)
 composer.json
 composer.lock
 package.json
+pnpm-lock.yaml
+
+# Ignore coding standard reports and build configuration files (anywhere)
 phpcs-report.txt
 phpcs.xml
-pnpm-lock.yaml
-Thumbs.db
 webpack.config.js
+
+# Ignore OS-generated or temporary files (anywhere)
+.DS_Store
+Thumbs.db
+
+# Ignore exported data and archive files (anywhere)
 *.sql
 *.tar.gz
 *.zip

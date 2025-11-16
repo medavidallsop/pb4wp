@@ -17,8 +17,9 @@
 		"readme:update": "echo '\u001b[32mRunning readme-update...\u001b[0m' && composer run-script readme-update",
 		"watch": "echo '\u001b[32mRunning watch...\u001b[0m' && nodemon --watch client --ext css,scss,js --ignore '*.min.js' --ignore '*.min.css' --exec \"pnpm run build:assets:bundle && pnpm run build:assets:static\";",
 		"version:check": "echo '\u001b[32mRunning version:check...\u001b[0m' && composer run-script version-check",
+		"version:wp:check": "echo '\u001b[32mRunning version:wp:check...\u001b[0m' && composer run-script version-wp-check",
 		"zip": "echo '\u001b[32mRunning zip...\u001b[0m' && pnpm run build && composer install --no-dev && composer run-script zip && composer install",
-		"zip:release": "echo '\u001b[32mRunning zip:release...\u001b[0m' && pnpm run readme:update && pnpm run version:check && pnpm run build && composer install --no-dev && composer run-script zip && composer install"
+		"zip:release": "echo '\u001b[32mRunning zip:release...\u001b[0m' && pnpm run readme:update && pnpm run version:check && pnpm run version:wp:check && pnpm run build && composer install --no-dev && composer run-script zip && composer install"
 	},
 	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
 	"devDependencies": {

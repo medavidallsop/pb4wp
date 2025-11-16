@@ -1,7 +1,14 @@
+# Ignore OS-generated or temporary files (anywhere).
 .DS_Store
-phpcs-report.txt
 Thumbs.db
+
+# Ignore coding standard reports (anywhere).
+phpcs-report.txt
+
+# Ignore asset/build directories (root).
 /assets
-/node_modules/
-/vendor/
 /zip
+
+# Ignore dependency directories (anywhere).
+node_modules/
+vendor/
