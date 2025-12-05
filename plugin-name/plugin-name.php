@@ -22,6 +22,11 @@ namespace VendorName\PluginName;
 
 defined( 'ABSPATH' ) or exit;
 
+$vendor_scoped_autoload = __DIR__ . '/vendor-scoped/autoload.php';
+if ( file_exists( $vendor_scoped_autoload ) ) {
+	require_once $vendor_scoped_autoload;
+}
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use VendorName\PluginName\Example_Class;

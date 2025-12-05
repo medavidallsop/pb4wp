@@ -32,6 +32,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **Modern PHP** - Strict typing, namespaces, and modern PHP features
 - ✅ **Webpack Asset Pipeline** - Advanced bundling, minification, and optimization
 - ✅ **PNPM Package Manager** - Fast, efficient dependency management
+- ✅ **PHP Scoper** – Automatically scopes vendor code to eliminate dependency conflicts
 
 ## 🛠️ **Development Experience**
 - ✅ **WordPress Coding Standards** - PHPCS integration with WPCS rules*
@@ -109,6 +110,8 @@ When enqueuing your assets, enqueue from `/assets`, not `/client` as these are t
 
 # PHP
 
+## Examples
+
 General and lifecycle-based code examples are included. Amend or remove these as needed for your plugin.
 
 | File                            | Description                                                     |
@@ -121,6 +124,10 @@ General and lifecycle-based code examples are included. Amend or remove these as
 | `uninstall.php`                 | For uninstall scripts, e.g., delete database tables.            |
 
 The classes are autoloaded by Composer and get instantiated from `plugin-name.php`.
+
+## Scoper
+
+Add any required (non-dev) Composer dependencies to `composer-scoped.json`, and they will be automatically namespaced (e.g., `VendorName\PluginName\Scoped`) to avoid version clashes. [WPify Scoper](https://github.com/wpify/scoper) handles the scoping process behind the scenes.
 
 # Scripts
 
@@ -159,7 +166,6 @@ The zip will be created in `/zip`. Note that the `build` script is run automatic
 
 Consider the following recommendations when developing your plugin:
 
-- [GitHub actions](https://github.com/features/actions) to perform checks on code.
+- [GitHub Actions](https://github.com/features/actions) to perform checks on code.
 - [Lefthook](https://lefthook.dev) to check code before it is committed.
 - [PHPUnit](https://phpunit.de) to add unit tests.
-- [WPify Scoper](https://github.com/wpify/scoper) if using non-dev composer dependencies.

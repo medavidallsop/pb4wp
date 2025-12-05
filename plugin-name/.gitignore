@@ -12,3 +12,4 @@ phpcs-report.txt
 # Ignore dependency directories (anywhere).
 node_modules/
 vendor/
+vendor-scoped/

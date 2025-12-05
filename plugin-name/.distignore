@@ -7,14 +7,21 @@
 /client
 /zip
 
+# Ignore temporary directories (anywhere).
+tmp*/
+temp-*/
+
 # Ignore node_modules directories (anywhere).
 node_modules/
 
 # Ignore dependency and package manager files (anywhere).
 composer.json
 composer.lock
+composer-scoped.json
+composer-scoped.lock
 package.json
 pnpm-lock.yaml
+scoper.custom.php
 
 # Ignore coding standard reports and build configuration files (anywhere).
 phpcs-report.txt
