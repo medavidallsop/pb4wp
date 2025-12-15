@@ -2,10 +2,10 @@
 Contributors: (comma separated list of WordPress.org usernames)
 Donate link: https://example.com
 Tags: tag1, tag2, tag3, tag4, tag5
-Requires at least: 5.0.0
-Tested up to: 6.8
 Stable tag: 1.0.0
 Requires PHP: 7.4.0
+Requires at least: 5.0.0
+Tested up to: 6.8
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 

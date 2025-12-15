@@ -6,8 +6,8 @@
  * Author: Vendor Name
  * Author URI: https://example.com
  * Version: 1.0.0
- * Requires at least: 5.0.0
  * Requires PHP: 7.4.0
+ * Requires at least: 5.0.0
  * Domain Path: /i18n/languages/
  * Text Domain: plugin-name
  * License: GNU General Public License v3.0

@@ -4,6 +4,10 @@ $readme       = 'readme.txt';
 $api_url      = 'https://api.wordpress.org/core/stable-check/1.0/';
 $error_prefix = '❌ Readme.txt cannot be updated: ';
 
+// ============================================================================
+// FETCH WP VERSION
+// ============================================================================
+
 // Get latest WordPress version.
 $json = file_get_contents( $api_url );
 if ( false === $json ) {
@@ -31,14 +35,20 @@ if ( count( $version_parts ) >= 2 ) {
 	$latest_major_minor = $latest; // Fallback to full version if parsing fails.
 }
 
-// Read the readme file.
+// ============================================================================
+// READ README FILE
+// ============================================================================
+
 $contents = file_get_contents( $readme );
 if ( false === $contents ) {
 	fwrite( STDERR, $error_prefix . "Failed to read $readme.\n" );
 	exit( 1 );
 }
 
-// Show summary of changes.
+// ============================================================================
+// SHOW SUMMARY OF CHANGES
+// ============================================================================
+
 $today = date( 'Y-m-d' ); // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 
 // Find current "Tested up to:" version.
@@ -58,7 +68,10 @@ if ( $has_date_placeholder ) {
 }
 echo "\n";
 
-// Ask for confirmation.
+// ============================================================================
+// CONFIRMATION
+// ============================================================================
+
 echo 'Do you want to proceed with these changes? (y/N): ';
 $handle   = fopen( 'php://stdin', 'r' );
 $response = trim( fgets( $handle ) );
@@ -68,6 +81,10 @@ if ( strtolower( $response ) !== 'y' && strtolower( $response ) !== 'yes' ) {
 	echo "❌ $readme update cancelled.\n";
 	exit( 0 );
 }
+
+// ============================================================================
+// UPDATE README FILE
+// ============================================================================
 
 // Replace "Tested up to".
 $contents = preg_replace(
@@ -86,5 +103,8 @@ $contents = preg_replace(
 // Save file.
 file_put_contents( $readme, $contents );
 
-// Show summary of changes.
+// ============================================================================
+// OUTPUT
+// ============================================================================
+
 echo "\n✅ Updated $readme\n";
