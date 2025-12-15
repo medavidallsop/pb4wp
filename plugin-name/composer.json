@@ -55,7 +55,7 @@
 	"extra": {
 		"wpify-scoper": {
 			"prefix": "VendorName\\PluginName\\Scoped",
-			"folder": "vendor-scoped",
+			"folder": "vendor_prefixed",
 			"globals": [
 				"action-scheduler",
 				"woocommerce",

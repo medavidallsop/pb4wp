@@ -11,5 +11,5 @@
 	<rule ref="WordPress-Docs"></rule>
 	<exclude-pattern>/node_modules/</exclude-pattern>
 	<exclude-pattern>/vendor/</exclude-pattern>
-	<exclude-pattern>/vendor-scoped/</exclude-pattern>
+	<exclude-pattern>/vendor_prefixed/</exclude-pattern>
 </ruleset>

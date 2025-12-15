@@ -22,11 +22,7 @@ namespace VendorName\PluginName;
 
 defined( 'ABSPATH' ) or exit;
 
-$vendor_scoped_autoload = __DIR__ . '/vendor-scoped/autoload.php';
-if ( file_exists( $vendor_scoped_autoload ) ) {
-	require_once $vendor_scoped_autoload;
-}
-
+require_once __DIR__ . '/vendor_prefixed/autoload.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 use VendorName\PluginName\Example_Class;
@@ -118,6 +114,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		 *
 		 * The load_plugin_textdomain function is not needed in WordPress v4.6+ for WordPress.org plugins (and v6.8+ for self-hosted).
 		 * It is still included here to ensure compatibility with older WordPress versions.
+		 * This will be flagged as an error by Plugin Check (https://wordpress.org/plugins/plugin-check/). You can remove it if you are not using it.
 		 *
 		 * @return void
 		 * @since 1.0.0

@@ -5,4 +5,4 @@ assets/**/*.min.*
 
 # Ignore vendor directories (anywhere).
 **/vendor
-**/vendor-scoped
+**/vendor_prefixed

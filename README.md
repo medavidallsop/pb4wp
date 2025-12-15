@@ -123,11 +123,11 @@ General and lifecycle-based code examples are included. Amend or remove these as
 | `src/Lifecycle/Updater.php`     | Can be used for updating, e.g., add a new option.               |
 | `uninstall.php`                 | For uninstall scripts, e.g., delete database tables.            |
 
-The classes are autoloaded by Composer and get instantiated from `plugin-name.php`.
+The classes are autoloaded by Composer and get instantiated from your renamed `plugin-name.php`.
 
 ## Scoper
 
-Add any required (non-dev) Composer dependencies to `composer-scoped.json`, and they will be automatically namespaced (e.g., `VendorName\PluginName\Scoped`) to avoid version clashes. [WPify Scoper](https://github.com/wpify/scoper) handles the scoping process behind the scenes.
+Add any required (non-dev) Composer dependencies to `composer-scoped.json`, and they will be automatically namespaced (e.g., `VendorName\PluginName\Scoped`) to avoid version clashes. [WPify Scoper](https://github.com/wpify/scoper) handles the scoping process behind the scenes. These dependencies will be placed in `vendor_prefixed`, which is a standard folder name and is ignored by tools such as [Plugin Check](https://wordpress.org/plugins/plugin-check/).
 
 # Scripts
 
@@ -160,7 +160,7 @@ Amend/remove these scripts as required.
 
 To genrate a zip, run `pnpm run zip` or `pnp run zip:release` script, see differences in the scripts section above; to exclude specific files/folders, add them to `.distignore`.
 
-The zip will be created in `/zip`. Note that the `build` script is run automatically before zipping.
+The zip will be created in `/zip`. Note: The `build` script is run automatically before zipping.
 
 # Recommendations
 
