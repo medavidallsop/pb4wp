@@ -97,7 +97,7 @@ if ( ! class_exists( 'Plugin_Name' ) ) {
 		}
 
 		/**
-		 * Initialize hooks for activation, deactivation, installation, updates, and textdomain loading.
+		 * Initialize hooks for activation, deactivation, installation, updates, etc.
 		 *
 		 * @return void
 		 * @since 1.0.0
