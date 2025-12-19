@@ -18,9 +18,9 @@ Created by [David Allsop](https://davidallsop.com).
 A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're working on a Windows machine, the recommended approach is to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (available since Windows 10).
 
 - [Composer](https://getcomposer.org/doc/00-intro.md)
-- [Node.js](https://nodejs.org/en)*
-- [PHP](https://www.php.net/manual/en/install.php)\*
-- [PNPM](https://pnpm.io/installation)*
+- [Node.js](https://nodejs.org/en)
+- [PHP](https://www.php.net/manual/en/install.php)
+- [PNPM](https://pnpm.io/installation)
 - [WP-CLI](https://wp-cli.org/#installing) (as some included scripts use the `wp` command)
 
 <small>*\* Some scripts included may require a recent PHP version.*</small>
@@ -35,7 +35,7 @@ A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're wor
 - ✅ **PHP Scoper** – Automatically scopes vendor code to eliminate dependency conflicts
 
 ## 🛠️ **Development Experience**
-- ✅ **WordPress Coding Standards** - PHPCS integration with WPCS rules*
+- ✅ **WordPress Coding Standards** - PHPCS integration with WPCS rules
 - ✅ **Prettier Code Formatting** - Consistent code style across PHP, JS, and CSS
 - ✅ **Hot Reload Development** - Watch mode for instant asset rebuilding
 - ✅ **Comprehensive Build Scripts** - One-command builds for development and production
