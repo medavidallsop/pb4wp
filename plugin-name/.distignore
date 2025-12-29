@@ -15,9 +15,9 @@ temp-*/
 node_modules/
 
 # Ignore dependency and package manager files (anywhere).
-composer.json
+# WordPress.org recommends composer.json/composer-scoped.json remains.
+# https://github.com/WordPress/plugin-check/issues/829
 composer.lock
-composer-scoped.json
 composer-scoped.lock
 package.json
 pnpm-lock.yaml

@@ -1,5 +1,5 @@
-# This line ensures the vendor folder (anywhere) is not scanned during version:wp:check.
-# This script uses WP Since (https://github.com/eduardovillao/wp-since) and by default scans all .php files.
-# Only the plugin's own .php files should be scanned, not vendor .php files.
-# The vendor folder is not added to .distignore as it is needed in the zip for auto-load, non-dev dependencies, etc.
+# This line ensures the vendor/vendor_prefixed folders (anywhere) are not scanned during version:wp:check.
+# The version:wp:check script uses WP Since (https://github.com/eduardovillao/wp-since) which scans all .php files.
+# Only the plugin's own .php files should be scanned, not vendor/vendor_prefixed .php files.
 vendor/ export-ignore
+vendor_prefixed/ export-ignore
