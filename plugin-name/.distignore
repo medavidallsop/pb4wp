@@ -24,8 +24,8 @@ pnpm-lock.yaml
 scoper.custom.php
 
 # Ignore coding standard reports and build configuration files (anywhere).
-phpcs-report.txt
 phpcs.xml
+phpcs-report.txt
 webpack.config.js
 
 # Ignore OS-generated or temporary files (anywhere).
