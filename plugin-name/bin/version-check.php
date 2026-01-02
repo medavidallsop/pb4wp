@@ -70,13 +70,13 @@ if ( ! preg_match( '/Requires at least:\s*([0-9.]+)/i', $readme_content, $matche
 }
 $readme_requires_wp = $matches[1];
 
-// Extract "Tested up to:" from plugin header (optional).
+// Extract "Tested up to:" from plugin header.
 $plugin_tested_up_to = null;
 if ( preg_match( '/^\s*\*\s*Tested up to:\s*([0-9.]+)/mi', $plugin_content, $matches ) ) {
 	$plugin_tested_up_to = $matches[1];
 }
 
-// Extract "Tested up to:" from readme.txt (optional).
+// Extract "Tested up to:" from readme.txt.
 $readme_tested_up_to = null;
 if ( preg_match( '/Tested up to:\s*([0-9.]+)/i', $readme_content, $matches ) ) {
 	$readme_tested_up_to = $matches[1];
@@ -99,6 +99,21 @@ if ( ! $composer_data || ! isset( $composer_data['version'] ) ) {
 	exit( 1 );
 }
 $composer_version = $composer_data['version'];
+
+// Extract PHP version from composer-scoped.json.
+$composer_scoped_file    = 'composer-scoped.json';
+$composer_scoped_content = file_get_contents( $composer_scoped_file );
+$composer_scoped_data    = json_decode( $composer_scoped_content, true );
+if ( ! $composer_scoped_data ) {
+	fwrite( STDERR, "❌ Could not parse $composer_scoped_file\n" );
+	exit( 1 );
+}
+$composer_scoped_php = null;
+if ( isset( $composer_scoped_data['config']['platform']['php'] ) ) {
+	$composer_scoped_php = $composer_scoped_data['config']['platform']['php'];
+	// Normalize version (e.g., "7.4" or "7.4.33" -> "7.4").
+	$composer_scoped_php = preg_replace( '/^(\d+\.\d+).*$/', '$1', $composer_scoped_php );
+}
 
 // Extract version from package.json.
 $package_file    = 'package.json';
@@ -127,9 +142,15 @@ if ( $base_version !== $readme_version ) {
 	$ok = false;
 }
 
-// Requires PHP mismatch.
+// Requires PHP mismatch in readme.txt.
 if ( $plugin_requires_php !== $readme_requires_php ) {
 	fwrite( STDERR, "❌ Requires PHP mismatch: plugin header ($plugin_requires_php) != readme.txt ($readme_requires_php)\n" );
+	$ok = false;
+}
+
+// Requires PHP mismatch in composer-scoped.json.
+if ( null !== $composer_scoped_php && $plugin_requires_php !== $composer_scoped_php ) {
+	fwrite( STDERR, "❌ Requires PHP mismatch: plugin header ($plugin_requires_php) != composer-scoped.json platform PHP ($composer_scoped_php)\n" );
 	$ok = false;
 }
 
@@ -180,6 +201,9 @@ if ( $base_version !== $package_version ) {
 if ( $ok ) {
 	echo "✅ All versions match: $base_version\n";
 	echo "✅ Requires PHP matches: $plugin_requires_php\n";
+	if ( null !== $composer_scoped_php ) {
+		echo "✅ composer-scoped.json platform PHP matches: $composer_scoped_php\n";
+	}
 	echo "✅ Requires at least matches: $plugin_requires_wp\n";
 	if ( null !== $plugin_tested_up_to && null !== $readme_tested_up_to ) {
 		echo "✅ Tested up to matches: $plugin_tested_up_to\n";

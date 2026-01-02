@@ -1,5 +1,9 @@
 {
 	"config": {
-		"autoloader-suffix": "VendorNamePluginNameScoped"
+		"autoloader-suffix": "VendorNamePluginNameScoped",
+		"platform": {
+			"php": "7.4"
+		},
+		"platform-check": false
 	}
 }
