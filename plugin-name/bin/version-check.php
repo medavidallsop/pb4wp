@@ -90,7 +90,7 @@ preg_match_all(
 );
 $changelog_versions = $matches[1] ?? array();
 
-// Extract PHP versions from composer-scoped.json.
+// Extract PHP version from composer-scoped.json.
 $composer_scoped_file    = 'composer-scoped.json';
 $composer_scoped_content = file_get_contents( $composer_scoped_file );
 $composer_scoped_data    = json_decode( $composer_scoped_content, true );
@@ -98,17 +98,11 @@ if ( ! $composer_scoped_data ) {
 	fwrite( STDERR, "❌ Could not parse $composer_scoped_file\n" );
 	exit( 1 );
 }
-$composer_scoped_php_min = null;
-$composer_scoped_php_max = null;
+$composer_scoped_php = null;
 if ( isset( $composer_scoped_data['config']['platform']['php'] ) ) {
 	$composer_scoped_php = $composer_scoped_data['config']['platform']['php'];
-	// Parse version constraint (e.g., ">=7.4 <9.0").
-	if ( preg_match( '/>=\s*(\d+\.\d+)/', $composer_scoped_php, $min_matches ) ) {
-		$composer_scoped_php_min = $min_matches[1];
-	}
-	if ( preg_match( '/<\s*(\d+\.\d+)/', $composer_scoped_php, $max_matches ) ) {
-		$composer_scoped_php_max = $max_matches[1];
-	}
+	// Normalize version (e.g., "7.4" or "7.4.33" -> "7.4").
+	$composer_scoped_php = preg_replace( '/^(\d+\.\d+).*$/', '$1', $composer_scoped_php );
 }
 
 // Extract PHP versions from phpcs.xml.
@@ -191,20 +185,9 @@ if ( $plugin_requires_php !== $readme_requires_php ) {
 	fwrite( STDERR, "❌ Requires PHP mismatch: plugin header ($plugin_requires_php) != readme.txt ($readme_requires_php)\n" );
 	$ok = false;
 }
-if ( null !== $composer_scoped_php_min ) {
-	if ( $plugin_requires_php !== $composer_scoped_php_min ) {
-		fwrite( STDERR, "❌ Requires PHP mismatch: plugin header ($plugin_requires_php) != composer-scoped.json platform PHP minimum ($composer_scoped_php_min)\n" );
-		$ok = false;
-	}
-	if ( null !== $composer_scoped_php_max ) {
-		// Normalize versions for comparison (e.g., "7.4" -> 7.4, "9.0" -> 9.0).
-		$min_version_float = (float) $composer_scoped_php_min;
-		$max_version_float = (float) $composer_scoped_php_max;
-		if ( $max_version_float <= $min_version_float ) {
-			fwrite( STDERR, "❌ composer-scoped.json platform PHP range invalid: maximum ($composer_scoped_php_max) must be greater than minimum ($composer_scoped_php_min)\n" );
-			$ok = false;
-		}
-	}
+if ( null !== $composer_scoped_php && $plugin_requires_php !== $composer_scoped_php ) {
+	fwrite( STDERR, "❌ Requires PHP mismatch: plugin header ($plugin_requires_php) != composer-scoped.json platform PHP ($composer_scoped_php)\n" );
+	$ok = false;
 }
 if ( null !== $phpcs_php_min ) {
 	if ( $plugin_requires_php !== $phpcs_php_min ) {
@@ -219,13 +202,6 @@ if ( null !== $phpcs_php_min ) {
 			fwrite( STDERR, "❌ phpcs.xml testVersion range invalid: maximum ($phpcs_php_max) must be greater than minimum ($phpcs_php_min)\n" );
 			$ok = false;
 		}
-	}
-}
-// Maximum PHP version mismatch between composer-scoped.json and phpcs.xml.
-if ( null !== $composer_scoped_php_max && null !== $phpcs_php_max ) {
-	if ( $composer_scoped_php_max !== $phpcs_php_max ) {
-		fwrite( STDERR, "❌ Maximum PHP version mismatch: composer-scoped.json ($composer_scoped_php_max) != phpcs.xml ($phpcs_php_max)\n" );
-		$ok = false;
 	}
 }
 
@@ -250,12 +226,8 @@ if ( null !== $plugin_tested_up_to && null !== $readme_tested_up_to ) {
 if ( $ok ) {
 	echo "✅ All versions match: $base_version\n";
 	echo "✅ Requires PHP matches: $plugin_requires_php\n";
-	if ( null !== $composer_scoped_php_min ) {
-		$range_display = $composer_scoped_php_min;
-		if ( null !== $composer_scoped_php_max ) {
-			$range_display .= " < $composer_scoped_php_max";
-		}
-		echo "✅ composer-scoped.json platform PHP matches: $range_display\n";
+	if ( null !== $composer_scoped_php ) {
+		echo "✅ composer-scoped.json platform PHP matches: $composer_scoped_php\n";
 	}
 	if ( null !== $phpcs_php_min ) {
 		$range_display = $phpcs_php_min;
