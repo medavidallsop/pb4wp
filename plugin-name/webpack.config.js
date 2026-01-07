@@ -45,10 +45,15 @@ const minifiedConfig = {
 
 /*
 Non-minified configuration.
-Primarily included to ensure JS translations work as JSON translation files need this as the source,
-minified version enqueued in wp_enqueue_script with wp_set_script_translations which links everything together.
-Not possible to extract strings from /client source files then enqueued from the equivalent in /assets,
-the non-minified version is used as wp i18n make-pot ignores .min.js files.
+
+This configuration is primarily needed for JavaScript translations to work correctly:
+- The `wp i18n make-pot` command ignores .min.js files, so it cannot extract translatable
+  strings from minified bundles.
+- While the minified version is what gets enqueued via `wp_enqueue_script()`,
+  WordPress uses the non-minified version as the source.
+- It's not possible to extract strings from /client source files and then enqueue
+  the equivalent minified files from /assets, as the translation system needs to match
+  the exact file structure.
 */
 const nonMinifiedConfig = {
 	...baseConfig,
