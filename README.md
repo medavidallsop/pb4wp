@@ -4,7 +4,7 @@
 
 A lightweight, best-practice boilerplate for building WordPress plugins quickly and cleanly.
 
-Created by [David Allsop](https://davidallsop.com).
+Created by [David Allsop](https://davidallsop.com). Additional details are available on the [project page](https://davidallsop.com/work/plugin-boilerplate-for-wordpress/).
 
 # Requirements
 
