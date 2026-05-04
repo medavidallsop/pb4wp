@@ -4,8 +4,6 @@
 
 A lightweight, best-practice boilerplate for building WordPress plugins quickly and cleanly.
 
-Created by [David Allsop](https://davidallsop.com). Additional details are available on the [project page](https://davidallsop.com/work/plugin-boilerplate-for-wordpress/).
-
 # Requirements
 
 A POSIX compliant operating system (e.g. macOS, Linux) is assumed. If you're working on a Windows machine, the recommended approach is to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (available since Windows 10).
